@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Compnent</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick-theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+    <link rel="stylesheet" href="asset/css/style.css">
+</head>
+<body class="home-page" id="home-page">
+    <!-- <nav>
+      <ul>
+        <li data-section="banner-section" class="active mt-3"><a href="#banner"><i class="fa fa-bars" aria-hidden="true"></i></a></li>
+        <li data-section="accordion-section"><a href="#accordion"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+        <li data-section="tabbing-section"><a href="#tabbing"><i class="fa fa-clone" aria-hidden="true"></i></a></li>
+        <li data-section="isotope-section"><a href="#isotope"><i class="fa fa-th-large" aria-hidden="true"></i></a></li>
+        <li data-section="grid-section"><a href="#grid-section"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>
+        <li data-section="fancybox-section"><a href="#fancybox"><i class="fa fa-circle-o-notch" aria-hidden="true"></i></a></li>
+        <li data-section="counter-section"><a href="#counter"><i class="fa fa-id-card-o" aria-hidden="true"></i></a></li>
+        <li data-section="hover-section"><a href="#hover"><i class="fa fa-flask" aria-hidden="true"></i></a></li>
+      </ul>
+    </nav> -->
+    <section class="banner-section text-center active w-100" id="banner">
+        <nav class="navbar navbar-expand-lg w-100 position-relative">
+            <div class="container-fluid container-lg p-0">
+              <button class="navbar-toggler mx-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <div class="toggle">
+                    <span class="line-toggle"></span>
+                    <span class="line-toggle"></span>
+                    <span class="line-toggle"></span>
+                </div>
+              </button>
+              <div class="collapse navbar-collapse w-100" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto  mb-lg-0 mx-auto w-100 justify-content-center" >
+                  <li class="nav-item">
+                    <span class="hover d-lg-flex d-inline-block text-lg-center text-start px-3 text-uppercase justify-content-center flex-wrap w-100"><i class="fa fa-shopping-cart w-100" aria-hidden="true"></i><a href="#accordion">accordion</a>
+                  </li>
+                  <li class="nav-item">
+                    <span class="hover d-lg-flex d-inline-block text-lg-center text-start px-3 text-uppercase justify-content-center flex-wrap w-100"><i class="fa fa-bars w-100" aria-hidden="true"></i><a href="#tabbing">tabbing</a></span>
+                  </li>
+                  <li class="nav-item">
+                    <span class="hover d-lg-flex d-inline-block text-lg-center text-start px-3 text-uppercase justify-content-center flex-wrap w-100"><i class="fa fa-clone w-100" aria-hidden="true"></i><a href="#isotope">Isotope</a></span>
+                  </li>
+                  <li class="nav-item">
+                    <span class="hover d-lg-flex d-inline-block text-lg-center text-start px-3 text-uppercase justify-content-center flex-wrap w-100"><i class="fa fa-th-large w-100" aria-hidden="true"></i><a href="#grid-section">Grid</a></span>
+                  </li>
+                  <li class="nav-item">
+                    <span class="hover d-lg-flex d-inline-block text-lg-center text-start px-3 text-uppercase justify-content-center flex-wrap w-100"><i class="fa fa-picture-o w-100" aria-hidden="true"></i><a href="#fancybox">FancyBox</a></span>
+                  </li>
+                  <li class="nav-item">
+                    <span class="hover d-lg-flex d-inline-block text-lg-center text-start px-3 text-uppercase justify-content-center flex-wrap w-100"><i class="fa fa-circle-o-notch w-100" aria-hidden="true"></i><a href="#counter">counter</a></span>
+                  </li>
+                  <li class="nav-item">
+                    <span class="hover d-lg-flex d-inline-block text-lg-center text-start px-3 text-uppercase justify-content-center flex-wrap w-100"><i class="fa fa-id-card-o w-100" aria-hidden="true"></i><a href="#">Parallax</a></span>
+                  </li>
+                  <li class="nav-item">
+                    <span class="hover d-lg-flex d-inline-block text-lg-center text-start px-3 text-uppercase justify-content-center flex-wrap w-100"><i class="fa fa-flask w-100" aria-hidden="true"></i><a href="#hover">hover</a></span>
+                  </li>
+                </ul>
+              </div>
+              
+            </div>
+          </nav>
+        <!-- <div class="menu-bar text-uppercase d-flex flex-wrap justify-content-around align-items-center w-97 mx-auto my-0  bottom-0 w-100">
+            <div class=" p-0  w-100 nav-button">
+              <div class=" justify-content-center w-100">
+                <ul class="navbar-nav flex-wrap justify-content-center" >
+                  <li class="nav-list nav-item"><span class="hover d-flex justify-content-center flex-wrap w-100"><i class="fa fa-bars w-100" aria-hidden="true"></i><a href="#accordion"> accordion</a></span></li>
+                  <li class="nav-list nav-item"><span class="hover d-flex justify-content-center flex-wrap w-100"><i class="fa fa-shopping-cart w-100" aria-hidden="true"></i><a href="#tabbing"> tabbing</a></span></li>
+                  <li class="nav-list nav-item"><span class="hover d-flex justify-content-center flex-wrap w-100"><i class="fa fa-clone w-100" aria-hidden="true"></i><a href="#isotope"> Isotope</a></span></li>
+                  <li class="nav-list nav-item"><span class="hover d-flex justify-content-center flex-wrap w-100"><i class="fa fa-th-large w-100" aria-hidden="true"></i><a href="#grid-section"> Grid</a></span></li>
+                  <li class="nav-list nav-item"><span class="hover d-flex justify-content-center flex-wrap w-100"><i class="fa fa-picture-o w-100" aria-hidden="true"></i><a href="#fancybox"> FancyBox</a></span></li>
+                  <li class="nav-list nav-item"><span class="hover d-flex justify-content-center flex-wrap w-100"><i class="fa fa-circle-o-notch w-100" aria-hidden="true"></i><a href="#counter"> counter</a></span></li>
+                  <li class="nav-list nav-item"><span class="hover d-flex justify-content-center flex-wrap w-100"><i class="fa fa-id-card-o w-100" aria-hidden="true"></i><a href="#"> Parallax</a></span></li>
+                  <li class="nav-list nav-item"><span class="hover d-flex justify-content-center flex-wrap w-100"><i class="fa fa-flask w-100" aria-hidden="true"></i><a href="#hover"> hover</a></span></li>
+                </ul>
+              </div>
+            </div>
+        </div>	 -->
+        <div class="effect design-component spacing  w-100 h-100 m-0 position-relative d-inline-block ">
+          <div class="heading d-flex justify-content-center align-items-center ">
+            <h1>Design Component </h1>
+          </div>
+        </div>
+    </section>
+    <section class="accordion-section secondary-bg spacing parallax-item w-100" id="accordion">
+      <div class="title text-center d-flex justify-content-center align-items-center">
+        <h2 class="bottom-border position-relative text-white"> AccorDion</h2>
+      </div>
+      <div class="accordian-slide fade active show container" id="SOLUTIONS">
+          <div class="accordian-item">
+              <h4 class="accordian-title">E-COMMERCES, RETAIL &amp; B2B</h4>
+              <div class="accordian-detail">
+                  <div class="row">
+                      <div class="col p-0">
+                          <div class="accordian-img img-1">
+                              <!-- <img src="https://srmahour.github.io/accordian/images/e-commerces_retail_b2b.jpg" alt="" class="img-fluid"> -->
+                          </div>
+                      </div>
+                      <div class="col primary-bg h-100 h-100">
+                          <div class="offer-content">
+                              <h2>E-COMMERCES, RETAIL &amp; B2B</h2>
+                              <p>Lorem Ipsum is simply dummy text of the printing
+                              and typesetting industry. Lorem Ipsum has been
+                              the industry's standard dummy text ever since the
+                              1500s, when an unknown printer took a galley of
+                              type and scrambled it to make a type specimen
+                              book. It has survived not only five centuries, but
+                              also the leap into electronic typesetting.</p>
+                              <!-- <a href="javascript:;">Learn More </a> -->
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="accordian-item">
+              <h4 class="accordian-title">HEALTHCARE &amp; FITNESS</h4>
+              <div class="accordian-detail">
+                  <div class="row">
+                      <div class="col p-0">
+                          <div class="accordian-img img-2">
+                            <!-- <img src="https://srmahour.github.io/accordian/images/healthcare_itness.jpg" alt="" class="img-fluid"> -->
+                          </div>
+                      </div>
+                      <div class="col primary-bg h-100">
+                          <div class="offer-content">
+                              <h2>HEALTHCARE &amp; FITNESS</h2>
+                              <p>Lorem Ipsum is simply dummy text of the printing
+                              and typesetting industry. Lorem Ipsum has been
+                              the industry's standard dummy text ever since the
+                              1500s, when an unknown printer took a galley of
+                              type and scrambled it to make a type specimen
+                              book. It has survived not only five centuries, but
+                              also the leap into electronic typesetting.</p>
+                              <!-- <a href="javascript:;">Learn More </a> -->
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            </div>                 
+          <div class="accordian-item">
+              <h4 class="accordian-title">REAL ESTATE &amp; PROPERTY</h4>
+              <div class="accordian-detail">
+                  <div class="row">
+                      <div class="col p-0">
+                          <div class="accordian-img img-3">
+                              <!-- <img src="https://srmahour.github.io/accordian/images/real_estate_property.jpg" alt="" class="img-fluid"> -->
+                          </div>
+                      </div>
+                      <div class="col primary-bg h-100">
+                          <div class="offer-content">
+                              <h2>REAL ESTATE &amp; PROPERTY</h2>
+                              <p>Lorem Ipsum is simply dummy text of the printing
+                              and typesetting industry. Lorem Ipsum has been
+                              the industry's standard dummy text ever since the
+                              1500s, when an unknown printer took a galley of
+                              type and scrambled it to make a type specimen
+                              book. It has survived not only five centuries, but
+                              also the leap into electronic typesetting.</p>
+                              <!-- <a href="javascript:;">Learn More </a> -->
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="accordian-item">
+              <h4 class="accordian-title">BANKING, FINANCE &amp; INSURANCE</h4>
+              <div class="accordian-detail">
+                  <div class="row">
+                      <div class="col p-0">
+                          <div class="accordian-img img-4">
+                              <!-- <img src="https://srmahour.github.io/accordian/images/banking_finance_insurance.jpg" alt="" class="img-fluid"> -->
+                          </div>
+                      </div>
+                      <div class="col primary-bg h-100">
+                          <div class="offer-content">
+                              <h2>BANKING, FINANCE &amp; INSURANCE</h2>
+                              <p>Lorem Ipsum is simply dummy text of the printing
+                              and typesetting industry. Lorem Ipsum has been
+                              the industry's standard dummy text ever since the
+                              1500s, when an unknown printer took a galley of
+                              type and scrambled it to make a type specimen
+                              book. It has survived not only five centuries, but
+                              also the leap into electronic typesetting.</p>
+                              <!-- <a href="javascript:;">Learn More </a> -->
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>                  
+          <div class="accordian-item">
+              <h4 class="accordian-title">CONSTRUCTION</h4>
+              <div class="accordian-detail">
+                  <div class="row">
+                      <div class="col p-0">
+                          <div class="accordian-img img-5">
+                              <!-- <img src="https://srmahour.github.io/accordian/images/construction.jpg" alt="" class="img-fluid"> -->
+                          </div>
+                      </div>
+                      <div class="col primary-bg h-100">
+                          <div class="offer-content">
+                              <h2>CONSTRUCTION</h2>
+                              <p>Lorem Ipsum is simply dummy text of the printing
+                              and typesetting industry. Lorem Ipsum has been
+                              the industry's standard dummy text ever since the
+                              1500s, when an unknown printer took a galley of
+                              type and scrambled it to make a type specimen
+                              book. It has survived not only five centuries, but
+                              also the leap into electronic typesetting.</p>
+                              <!-- <a href="javascript:;">Learn More </a> -->
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>                  
+          <div class="accordian-item">
+              <h4 class="accordian-title">TRAVEL &amp; HOSPITALITY</h4>
+              <div class="accordian-detail">
+                  <div class="row">
+                      <div class="col p-0">
+                          <div class="accordian-img img-6">
+                              <!-- <img src="https://srmahour.github.io/accordian/images/travel_hospitality.jpg" alt="" class="img-fluid"> -->
+                          </div>
+                      </div>
+                      <div class="col primary-bg h-100">
+                          <div class="offer-content">
+                              <h2>TRAVEL &amp; HOSPITALITY</h2>
+                              <p>Lorem Ipsum is simply dummy text of the printing
+                              and typesetting industry. Lorem Ipsum has been
+                              the industry's standard dummy text ever since the
+                              1500s, when an unknown printer took a galley of
+                              type and scrambled it to make a type specimen
+                              book. It has survived not only five centuries, but
+                              also the leap into electronic typesetting.</p>
+                              <!-- <a href="javascript:;">Learn More </a> -->
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>                  
+          <div class="accordian-item active">
+              <h4 class="accordian-title hide">MEDIA &amp; ENTERTAINMENT</h4>
+              <div class="accordian-detail">
+                  <div class="row">
+                      <div class="col p-0">
+                          <div class="accordian-img img-7">
+                              <!-- <img src="https://srmahour.github.io/accordian/images/media_entertainment.jpg" alt="" class="img-fluid"> -->
+                          </div>
+                      </div>
+                      <div class="col primary-bg h-100">
+                          <div class="offer-content">
+                              <h2>MEDIA &amp; ENTERTAINMENT</h2>
+                              <p>Lorem Ipsum is simply dummy text of the printing
+                              and typesetting industry. Lorem Ipsum has been
+                              the industry's standard dummy text ever since the
+                              1500s, when an unknown printer took a galley of
+                              type and scrambled it to make a type specimen
+                              book. It has survived not only five centuries, but
+                              also the leap into electronic typesetting.</p>
+                              <!-- <a href="javascript:;">Learn More </a> -->
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </section>
+    <section class="tabbing-section primary-bg spacing parallax-item w-100"  id="tabbing">
+        <div class="title text-center d-flex justify-content-center align-items-center">
+            <h2 class="bottom-border position-relative"> TabBing</h2>
+        </div>
+        <div class="container">
+           <!-- Tab links -->
+           <div class="tabs d-flex justify-content-center align-items-center">
+              <button class="tablinks w-25 d-flex justify-content-center align-items-center overflow-hidden position-relative active" data-country="London"><span class="d-flex align-items-center justify-content-center" data-title="London">London</span></button>
+              <button class="tablinks w-25 d-flex justify-content-center align-items-center overflow-hidden position-relative" data-country="Paris"><span class="d-flex align-items-center justify-content-center" data-title="Paris">Paris</span></button>
+              <button class="tablinks w-25 d-flex justify-content-center align-items-center overflow-hidden position-relative" data-country="Barcelona"><span class="d-flex align-items-center justify-content-center" data-title="Barcelona">Barcelona</span></button>
+              <button class="tablinks w-25 d-flex justify-content-center align-items-center overflow-hidden position-relative" data-country="Madrid"><span class="d-flex align-items-center justify-content-center" data-title="Madrid">Madrid</span></button>
+           </div>
+           <!-- Tab content -->
+           <div class="tab-content overflow-hidden position-relative">
+              <div id="London" class="tabcontent active">
+                 <h3 class="tab-title position-absolute">London</h3>
+                 <p class="tab-info m-0 p-0 w-100">London is the capital of Great Britain. It is one of the greatest cities in the world. It is an important business and financial centre. It is an intellectual centre, too. Everywhere in London, there are open spaces: Hyde Park and Regent Park are the largest. The City is the oldest part of London. </p>
+              </div>
+             
+              <div id="Paris" class="tabcontent">
+                 <h3 class="tab-title position-absolute">Paris</h3>
+                 <p class="tab-info m-0 p-0 w-100">Paris is in the Paris department of the Paris-Isle-of-France region The French historic, political and economic capital, with a population of only 2.5 million is located in the northern part of France. One of the most beautiful cities in the world. Home to historical monuments such as Notre Dame, the Eiffel tower (320m), Bastille, Louvre and many more. </p>
+              </div>
+             
+              <div id="Barcelona" class="tabcontent">
+                 <h3 class="tab-title position-absolute">Barcelona</h3>
+                 <p class="tab-info m-0 p-0 w-100">Barcelona has been an urban laboratory since the high Medieval Ages. A place of diversity, a backdrop for a multiplicity of social and cultural processes on multiple scales that reflect different ways of constructing the future, a city with a long experience of urban life and social innovations. </p>
+              </div>
+             
+              <div id="Madrid" class="tabcontent">
+                 <h3 class="tab-title position-absolute">Madrid</h3>
+                 <p class="tab-info m-0 p-0 w-100">Madrid is in the middle of Spain, in the Community of Madrid. The Community is a large area that includes the city as well as small towns and villages outside the city. 7 million people live in the Community. More than 3 million live in the city itself. 
+                 </p>
+              </div>
+           </div>
+        </div>
+    </section>
+    <section class="isotope-section secondary-bg spacing parallax-item w-100" id="isotope">
+        <div class="title text-center d-flex justify-content-center align-items-center">
+            <h2 class="bottom-border position-relative text-white"> IsoTope</h2>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center iso-nav">
+                     <a class="btn btn-light-2 active" href="#isotope" data-filter="*">All categories</a>
+                     <a  class='btn btn-light-2 m-2' href='#isotope' data-filter='.editorial'>Editorial</a>
+                     <a  class='btn btn-light-2 m-2' href='#isotope' data-filter='.graphic-design'>Graphic Design</a>
+                     <a  class='btn btn-light-2 m-2' href='#isotope' data-filter='.illustration'>Illustration</a>
+                     <a  class='btn btn-light-2 m-2' href='#isotope' data-filter='.ux-ui'>UX/UI</a>
+                     <a  class='btn btn-light-2 m-2' href='#isotope' data-filter='.web'>Web</a>				
+                </div>
+            </div>
+            <div class="row grid">
+                <div class="grid-sizer col-sm-6 col-md-4 col-lg-4"></div>
+                <div class="col-sm-6 col-md-4 col-lg-4 editorial grid-item">
+                    <article class="card overflow-hidden">
+                        <img alt="Image" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/orange-tree.jpg" class="img-fluid card-img-top wp-post-image"/>
+                             <div class="overlay position-absolute top-0 bottom-0 end-0 start-0 overflow-hidden text-center d-flex align-items-center">
+                                <div class="card-body">
+                                    <h5 class="card-title">Nono progetto</h5>
+                                    <p>Some text here.</p>
+                                    <a class="btn btn-sm btn-light" href="#" title="Nono progetto">VIEW MORE</a>
+                                </div>
+                            </div>
+                    </article>
+                </div>
+                 <div class="col-sm-6 col-md-4 col-lg-4 illustration grid-item">
+                    <article class="card overflow-hidden">
+                        <img alt="Image" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/submerged.jpg" class="img-fluid card-img-top wp-post-image" />							
+                            <div class="overlay position-absolute top-0 bottom-0 end-0 start-0 overflow-hidden text-center d-flex align-items-center">
+                                <div class="card-body">
+                                    <h5 class="card-title">Ottavo progetto</h5>
+                                    <p>Some text here.</p>
+                                    <a class="btn btn-sm btn-light" href="#" title="Ottavo progetto">VIEW MORE</a>
+                                </div>
+                            </div>
+                    </article>
+                </div>
+                 <div class="col-sm-6 col-md-4 col-lg-4 illustration grid-item">
+                    <article class="card overflow-hidden">
+                        <img alt="Image" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/look-out.jpg" class="img-fluid card-img-top wp-post-image" />							
+                            <div class="overlay position-absolute top-0 bottom-0 end-0 start-0 overflow-hidden text-center d-flex align-items-center">
+                                <div class="card-body">
+                                    <h5 class="card-title">Settimo progetto</h5>
+                                    <p>Some text here.</p>
+                                    <a class="btn btn-sm btn-light" href="#" title="Settimo progetto">VIEW MORE</a>
+                                </div>
+                            </div>
+                    </article>
+                </div>
+                 <div class="col-sm-6 col-md-4 col-lg-4 ux-ui grid-item">
+                    <article class="card overflow-hidden">
+                        <img alt="Image" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/one-world-trade.jpg" class="img-fluid card-img-top wp-post-image" />							
+                            <div class="overlay position-absolute top-0 bottom-0 end-0 start-0 overflow-hidden text-center d-flex align-items-center">
+                                <div class="card-body">
+                                    <h5 class="card-title">Sesto progetto</h5>
+                                    <p>Some text here.</p>
+                                    <a class="btn btn-sm btn-light" href="#" title="Sesto progetto">VIEW MORE</a>
+                                </div>
+                            </div>
+                    </article>
+                </div>
+                 <div class="col-sm-6 col-md-4 col-lg-4 editorial grid-item">
+                    <article class="card overflow-hidden">
+                        <img alt="Image" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/drizzle.jpg" class="img-fluid card-img-top wp-post-image" />							
+                            <div class="overlay position-absolute top-0 bottom-0 end-0 start-0 overflow-hidden text-center d-flex align-items-center">
+                                <div class="card-body">
+                                    <h5 class="card-title">Quinto progetto</h5>
+                                    <p>Some text here.</p>
+                                    <a class="btn btn-sm btn-light" href="#" title="Quinto progetto">VIEW MORE</a>
+                                </div>
+                            </div>
+                    </article>
+                </div>
+                 <div class="col-sm-6 col-md-4 col-lg-4 graphic-design grid-item">
+                    <article class="card overflow-hidden">
+                        <img alt="Image" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/cat-nose.jpg" class="img-fluid card-img-top wp-post-image" />							
+                            <div class="overlay position-absolute top-0 bottom-0 end-0 start-0 overflow-hidden text-center d-flex align-items-center">
+                                <div class="card-body">
+                                    <h5 class="card-title">Quarto progetto BODAS</h5>
+                                    <p>Some text here.</p>
+                                    <a class="btn btn-sm btn-light" href="#" title="Quarto progetto BODAS">VIEW MORE</a>
+                                </div>
+                            </div>
+                    </article>
+                </div>
+                 <div class="col-sm-6 col-md-4 col-lg-4 web grid-item">
+                    <article class="card overflow-hidden">
+                        <img alt="Image" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/contrail.jpg" class="img-fluid card-img-top wp-post-image"  />							
+                            <div class="overlay position-absolute top-0 bottom-0 end-0 start-0 overflow-hidden text-center d-flex align-items-center">
+                                <div class="card-body">
+                                    <h5 class="card-title">Terzo progetto AINETTE</h5>
+                                    <p>Some text here.</p>
+                                    <a class="btn btn-sm btn-light" href="#/" title="Terzo progetto AINETTE">VIEW MORE</a>
+                                </div>
+                            </div>
+                    </article>
+                </div>
+                 <div class="col-sm-6 col-md-4 col-lg-4 ux-ui grid-item">
+                    <article class="card overflow-hidden">
+                        <img alt="Image" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/golden-hour.jpg" class="img-fluid card-img-top wp-post-image" />							
+                            <div class="overlay position-absolute top-0 bottom-0 end-0 start-0 overflow-hidden text-center d-flex align-items-center">
+                                <div class="card-body">
+                                    <h5 class="card-title">Secondo progetto RADIO</h5>
+                                    <p>Some text here.</p>
+                                    <a class="btn btn-sm btn-light" href="#" title="Secondo progetto RADIO">VIEW MORE</a>
+                                </div>
+                            </div>
+                    </article>
+                </div>
+                 <div class="col-sm-6 col-md-4 col-lg-4 illustration grid-item">
+                    <article class="card overflow-hidden">
+                        <img alt="Image" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/flight-formation.jpg" class="img-fluid card-img-top wp-post-image" />							
+                            <div class="overlay position-absolute top-0 bottom-0 end-0 start-0 overflow-hidden text-center d-flex align-items-center">
+                                <div class="card-body">
+                                    <h5 class="card-title">Pimo progetto per portfolio SKATE</h5>
+                                    <p>Some text here.</p>
+                                    <a class="btn btn-sm btn-light" href="#" title="Pimo progetto per portfolio SKATE">VIEW MORE</a>
+                                </div>
+                            </div>
+                    </article>
+                </div>
+             </div>
+        </div>
+    </section>
+    <section class="grid-section primary-bg spacing parallax-item d-flex justify-content-center align-items-center flex-wrap w-100" id="grid-section">
+        <div class="title text-center d-flex justify-content-center align-items-center w-100">
+            <h2 class="bottom-border position-relative ">Grid</h2>
+        </div>
+        <div class="container grid-box">
+            <div class="card">
+               <div class="face face1">
+                    <div class="grid-img">
+                    <img alt="Image"  src="https://c2.staticflickr.com/6/5499/30972532232_e9a298a0c5_m.jpg" />
+                </div>
+               </div>
+               <div class="face face2">
+                  <h2>01</h2>
+               </div>
+            </div>
+            <div class="card">
+               <div class="face face1">
+                    <div class="grid-img">
+                    <img alt="Image" src="https://source.unsplash.com/vddccTqwal8/240x160" />
+                </div>
+               </div>
+               <div class="face face2">
+                  <h2>02</h2>
+               </div>
+            </div>
+            <div class="card">
+               <div class="face face1">
+                    <div class="grid-img">
+                    <img alt="Image" src="https://source.unsplash.com/cZVthlrnlnQ/240x160" />
+                </div>
+               </div>
+               <div class="face face2">
+                  <h2>03</h2>
+               </div>
+            </div>
+            <div class="card">
+               <div class="face face1">
+                    <div class="grid-img">
+                    <img alt="Image" src="https://source.unsplash.com/Lzx4J_Pb3sk/240x160" />
+                </div>
+               </div>
+               <div class="face face2">
+                  <h2>04</h2>
+               </div>
+            </div>
+            <div class="card">
+               <div class="face face1">
+                    <div class="grid-img">
+                    <img alt="Image" src="https://source.unsplash.com/Hw62tzAkXXE/240x160" />
+                </div>
+               </div>
+               <div class="face face2">
+                  <h2>05</h2>
+               </div>
+            </div>
+            <div class="card">
+               <div class="face face1">
+                    <div class="grid-img">
+                    <img alt="Image" src="https://source.unsplash.com/YEsedBccUEA/240x160" />
+                </div>
+               </div>
+               <div class="face face2">
+                  <h2>06</h2>
+               </div>
+            </div>
+            <div class="card">
+               <div class="face face1">
+                    <div class="grid-img">
+                    <img alt="Image" src="https://source.unsplash.com/mr_Tg4SI66A/240x160" />
+                </div>
+               </div>
+               <div class="face face2">
+                  <h2>07</h2>
+               </div>
+            </div>
+            <div class="card">
+               <div class="face face1">
+                    <div class="grid-img">
+                    <img alt="Image" src="https://source.unsplash.com/rkkr6-2I4sg/240x160" />
+                </div>
+               </div>
+               <div class="face face2">
+                  <h2>08</h2>
+               </div>
+            </div>
+            <div class="card">
+               <div class="face face1">
+                    <div class="grid-img">
+                    <img alt="Image" src="https://source.unsplash.com/A-fubu9QJxE/240x160" />
+                </div>
+               </div>
+               <div class="face face2">
+                  <h2>09</h2>
+               </div>
+            </div>
+            <div class="card">
+               <div class="face face1">
+                    <div class="grid-img">
+                    <img alt="Image" src="https://c2.staticflickr.com/6/5499/30972532232_e9a298a0c5_m.jpg" />
+                </div>
+               </div>
+               <div class="face face2">
+                  <h2>10</h2>
+               </div>
+            </div>
+            <div class="card">
+               <div class="face face1">
+                    <div class="grid-img">
+                    <img alt="Image" src="https://c1.staticflickr.com/1/357/31876784275_fbc9696913_m.jpg" />
+                </div>
+               </div>
+               <div class="face face2">
+                  <h2>11</h2>
+               </div>
+            </div>
+            <div class="card">
+               <div class="face face1">
+                    <div class="grid-img">
+                    <img alt="Image" src="https://farm6.staticflickr.com/5551/31096145856_4915afb23e_m_d.jpg" />
+                </div>
+               </div>
+               <div class="face face2">
+                  <h2>12</h2>
+               </div>
+            </div>
+            
+         </div>
+    </section>
+    <section class="fancybox-section secondary-bg spacing parallax-item w-100" id="fancybox">
+        <div class="title text-center d-flex justify-content-center align-items-center">
+            <h2 class="bottom-border position-relative text-white"> FancyBox</h2>
+        </div>
+       <div class="container">
+            <div class="main-slider d-flex justify-content-center flex-wrap align-items-center p-5">
+              <a href="https://c2.staticflickr.com/6/5499/30972532232_051e1dc57e_h.jpg" data-fancybox="images-1" data-type="image">
+                <img alt="Image" src="https://c2.staticflickr.com/6/5499/30972532232_e9a298a0c5_m.jpg" />
+              </a>            
+              <a href="https://farm6.staticflickr.com/5551/31096145856_793c69283a_k_d.jpg" data-fancybox="images-1" data-type="image">
+                <img alt="Image" src="https://farm6.staticflickr.com/5551/31096145856_4915afb23e_m_d.jpg" />
+              </a>            
+              <a href="https://c1.staticflickr.com/1/357/31876784275_12286240d4_h.jpg" data-fancybox="images-1" data-type="image">
+                <img alt="Image" src="https://c1.staticflickr.com/1/357/31876784275_fbc9696913_m.jpg" />
+              </a>            
+              <a href="https://farm1.staticflickr.com/582/32752534825_4b35b2df81_o_d.jpg" data-fancybox="images-1" data-type="image">
+                <img alt="Image" src="https://farm1.staticflickr.com/582/32752534825_c25321a594_m_d.jpg" />
+              </a>              
+              <a href="https://farm1.staticflickr.com/481/31675815133_70120d7a13_k_d.jpg" data-fancybox="images-1" data-type="image">
+                <img alt="Image" src="https://farm1.staticflickr.com/481/31675815133_c5c2935c04_m_d.jpg" />
+              </a>              
+              <a href="https://farm1.staticflickr.com/634/32032792255_bb579dee39_k_d.jpg" data-fancybox="images-1" data-type="image">
+              <img alt="Image" src="https://farm1.staticflickr.com/634/32032792255_7a599d6cb9_m_d.jpg" />
+              </a>              
+              <a href="https://source.unsplash.com/ndjyaOp0fOc/1600x900" data-fancybox="images-1" data-type="image">
+                  <img alt="Image" src="https://source.unsplash.com/ndjyaOp0fOc/240x160" />
+              </a>              
+              <a href="https://source.unsplash.com/A-fubu9QJxE/1600x900" data-fancybox="images-1" data-type="image">
+                  <img alt="Image" src="https://source.unsplash.com/A-fubu9QJxE/240x160" />
+              </a>              
+              <a href="https://source.unsplash.com/rkkr6-2I4sg/1600x900" data-fancybox="images-1" data-type="image">
+                  <img alt="Image" src="https://source.unsplash.com/rkkr6-2I4sg/240x160" />
+              </a>              
+              <a href="https://source.unsplash.com/mr_Tg4SI66A/1600x900" data-fancybox="images-1" data-type="image">
+                  <img alt="Image" src="https://source.unsplash.com/mr_Tg4SI66A/240x160" />
+              </a>              
+              <a href="https://source.unsplash.com/YEsedBccUEA/1600x900" data-fancybox="images-1" data-type="image">
+                  <img alt="Image" src="https://source.unsplash.com/YEsedBccUEA/240x160" />
+              </a>              
+              <a href="https://source.unsplash.com/Hw62tzAkXXE/1600x900" data-fancybox="images-1" data-type="image">
+                  <img alt="Image" src="https://source.unsplash.com/Hw62tzAkXXE/240x160" />
+              </a>              
+            </div>
+            <div class="main-slider d-flex justify-content-center flex-wrap align-items-center p-5">
+                <a href="https://source.unsplash.com/Lzx4J_Pb3sk/1600x900" data-fancybox="images" data-type="image">
+                    <img alt="Image" src="https://source.unsplash.com/Lzx4J_Pb3sk/240x160" />
+                </a>              
+                <a href="https://source.unsplash.com/cZVthlrnlnQ/1600x900" data-fancybox="images" data-type="image">
+                    <img alt="Image" src="https://source.unsplash.com/cZVthlrnlnQ/240x160" />
+                </a>              
+                <a href="https://source.unsplash.com/vddccTqwal8/1600x900" data-fancybox="images" data-type="image">
+                    <img alt="Image" src="https://source.unsplash.com/vddccTqwal8/240x160" />
+                </a>              
+                <a href="https://source.unsplash.com/Sj5efgWguDs/1600x900" data-fancybox="images" data-type="image">
+                    <img alt="Image" src="https://source.unsplash.com/Sj5efgWguDs/240x160" />
+                </a>              
+                <a href="https://source.unsplash.com/Y7y7fe8hrh0/1600x900" data-fancybox="images" data-type="image">
+                    <img alt="Image" src="https://source.unsplash.com/Y7y7fe8hrh0/240x160" />
+                </a>              
+                <a href="https://source.unsplash.com/sYegwYtIqJg/1600x900" data-fancybox="images" data-type="image">
+                    <img alt="Image" src="https://source.unsplash.com/sYegwYtIqJg/240x160" />
+                </a>              
+                <a href="https://c1.staticflickr.com/9/8148/29324593462_abebaddc38_k.jpg" data-fancybox="images">
+                    <img alt="Image" src="https://c1.staticflickr.com/9/8148/29324593462_f890687b7a_m.jpg" />
+                </a>            
+                <a href="https://c2.staticflickr.com/6/5499/30972532232_051e1dc57e_h.jpg" data-fancybox="images">
+                    <img alt="Image" src="https://c2.staticflickr.com/6/5499/30972532232_e9a298a0c5_m.jpg" />
+                </a>            
+                <a href="https://farm1.staticflickr.com/560/31434966252_8e1bc946da_b_d.jpg" data-fancybox="images">
+                    <img alt="Image" src="https://farm1.staticflickr.com/560/31434966252_8e1bc946da_m_d.jpg" />
+                </a>              
+                <a href="https://c1.staticflickr.com/1/357/31876784275_12286240d4_h.jpg" data-fancybox="images">
+                    <img alt="Image" src="https://c1.staticflickr.com/1/357/31876784275_fbc9696913_m.jpg" />
+                </a>            
+                <a href="https://source.unsplash.com/Sj5efgWguDs/1600x900" data-fancybox="images" data-type="image">
+                  <img alt="Image" src="https://source.unsplash.com/Sj5efgWguDs/240x160" />
+                </a>              
+                <a href="https://source.unsplash.com/Y7y7fe8hrh0/1600x900" data-fancybox="images" data-type="image">
+                    <img alt="Image" src="https://source.unsplash.com/Y7y7fe8hrh0/240x160" />
+                </a>
+            </div>
+        </div>
+    </section>
+    <section class="counter-section primary-bg spacing parallax-item w-100" id="counter">
+        <div class="title text-center d-flex justify-content-center align-items-center">
+            <h2 class="bottom-border position-relative">CounTer</h2>
+        </div>
+        <div class="container position-relative">
+            <div class="heart position-absolute">
+                <i class="fa fa-heart floating-heart"></i>
+                <i class="fa fa-heart floating-heart"></i>
+                <i class="fa fa-heart floating-heart"></i>
+            </div>
+            <div class="counter-box d-flex justify-content-center align-items-center flex-wrap position-relative">
+              <div class="counter-container d-flex justify-content-center align-items-center">
+                <i class="fa fa-comment"></i>
+                <div class="counter" data-target="60000"></div>
+              </div>
+              <div class="counter-container d-flex justify-content-center align-items-center">
+                <i class="fa fa-heart"></i>
+                <div class="counter" data-target="360000"></div>
+              </div>
+              <div class="counter-container d-flex justify-content-center align-items-center">
+                <i class="fa fa-user"></i>
+                <div class="counter" data-target="120000"></div>
+              </div>
+            </div>
+        </div>
+    </section>
+    <section class="hover-section secondary-bg spacing w-100" id="hover">
+      <div class="title text-center d-flex justify-content-center align-items-center">
+        <h2 class="bottom-border position-relative"> HoveR</h2>
+      </div>
+      <div class="container">
+        <div class="container-fluid">
+
+        <div class="row align-items-center">
+            <div class="outer-box ">
+                <div class="hover-effect">
+                    <div class="img-box box-1">
+                        <div class="slick-carousel">
+                            <div class="slide">
+                                <img alt="Image" class="w-100 h-100 " src="https://c2.staticflickr.com/6/5499/30972532232_e9a298a0c5_m.jpg" />
+                            </div>
+                            <div class="slide">
+                                <img alt="Image" class="w-100 h-100 " src="https://source.unsplash.com/Y7y7fe8hrh0/240x160" />
+                            </div>
+                            <div class="slide">
+                                <img alt="Image" class="w-100 h-100 " src="https://c1.staticflickr.com/1/357/31876784275_fbc9696913_m.jpg" />
+                            </div>
+                            <div class="slide">
+                                <img alt="Image" class="w-100 h-100 " src="https://c2.staticflickr.com/6/5499/30972532232_e9a298a0c5_m.jpg" />
+                            </div>
+                        </div>
+                        <div class="hover-box hover-box-1">
+                            <div class="icon icon-1"><i class="fa fa-shopping-bag" aria-hidden="true"></i></div>
+                            <div class="icon icon-2"><i class="fa fa-heart" aria-hidden="true"></i></div>
+                            <div class="icon icon-3"><i class="fa fa-eye" aria-hidden="true"></i></div>
+                            <!-- <div class="icon icon-4"><i class="fa fa-share-alt" aria-hidden="true"></i></div> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="text-box position-relative">
+                    One of eight 
+                </div>
+            </div>
+            <div class="outer-box ">
+                <div class="hover-effect">
+                    <div class="img-box box-2">
+                        <img alt="Image" class="w-100 h-100 " src="https://c2.staticflickr.com/6/5499/30972532232_e9a298a0c5_m.jpg" />
+                        <div class="hover-box hover-box-2">
+                             <div class="icon icon-1"><i class="fa fa-shopping-bag" aria-hidden="true"></i></div>
+                            <div class="icon icon-2"><i class="fa fa-heart" aria-hidden="true"></i></div>
+                            <div class="icon icon-3"><i class="fa fa-eye" aria-hidden="true"></i></div> 
+                        </div>
+                    </div>
+                </div>
+                <div class="text-box position-relative">
+                    One of eight 
+                </div>
+            </div>
+            <div class="outer-box ">
+                <div class="hover-effect">
+                    <div class="img-box box-3">
+                        <div class="slick-carousel">
+                            <div class="slide">
+                                <img alt="Image" class="w-100 h-100 " src="https://c2.staticflickr.com/6/5499/30972532232_e9a298a0c5_m.jpg" />
+                            </div>
+                            <div class="slide">
+                                <img alt="Image" class="w-100 h-100 " src="https://source.unsplash.com/Y7y7fe8hrh0/240x160" />
+                            </div>
+                            <div class="slide">
+                                <img alt="Image" class="w-100 h-100 " src="https://c1.staticflickr.com/1/357/31876784275_fbc9696913_m.jpg" />
+                            </div>
+                            <div class="slide">
+                                <img alt="Image" class="w-100 h-100 " src="https://c2.staticflickr.com/6/5499/30972532232_e9a298a0c5_m.jpg" />
+                            </div>
+                        </div>
+                        <div class="hover-box hover-box-3">
+                             <div class="icon icon-1"><i class="fa fa-shopping-bag" aria-hidden="true"></i></div>
+                            <div class="icon icon-2"><i class="fa fa-heart" aria-hidden="true"></i></div>
+                            <div class="icon icon-3"><i class="fa fa-eye" aria-hidden="true"></i></div> 
+                        </div>
+                    </div>
+                </div>
+                <div class="text-box position-relative">
+                    One of eight 
+                </div>
+            </div>
+            <div class="outer-box ">
+                <div class="hover-effect">
+                    <div class="img-box box-4">
+                        <img alt="Image" class="w-100 h-100 " src="https://c2.staticflickr.com/6/5499/30972532232_e9a298a0c5_m.jpg" />
+                        <div class="hover-box hover-box-4">
+                             <div class="icon icon-1"><i class="fa fa-shopping-bag" aria-hidden="true"></i></div>
+                            <div class="icon icon-2"><i class="fa fa-heart" aria-hidden="true"></i></div>
+                            <div class="icon icon-3"><i class="fa fa-eye" aria-hidden="true"></i></div> 
+                        </div>
+                    </div>
+                </div>
+                <div class="text-box position-relative">
+                    One of eight 
+                </div>
+            </div>
+        </div>
+        <div class="row align-items-center">
+            <div class="outer-box ">
+                <div class="hover-effect">
+                    <div class="img-box box-5">
+                        <img alt="Image" class="w-100 h-100 " src="https://c2.staticflickr.com/6/5499/30972532232_e9a298a0c5_m.jpg" />
+                        <div class="hover-box hover-box-5">
+                             <div class="icon icon-1"><i class="fa fa-shopping-bag" aria-hidden="true"></i></div>
+                            <div class="icon icon-2"><i class="fa fa-heart" aria-hidden="true"></i></div>
+                            <div class="icon icon-3"><i class="fa fa-eye" aria-hidden="true"></i></div> 
+                        </div>
+                    </div>
+                </div>
+                <div class="text-box position-relative">
+                    One of eight 
+                </div>
+            </div>
+            <div class="outer-box ">
+                <div class="hover-effect">
+                    <div class="img-box box-6">
+                        <img alt="Image" class="w-100 h-100 " src="https://c2.staticflickr.com/6/5499/30972532232_e9a298a0c5_m.jpg" />
+                        <div class="hover-box hover-box-6">
+                             <div class="icon icon-1"><i class="fa fa-shopping-bag" aria-hidden="true"></i></div>
+                            <div class="icon icon-2"><i class="fa fa-heart" aria-hidden="true"></i></div>
+                            <div class="icon icon-3"><i class="fa fa-eye" aria-hidden="true"></i></div> 
+                        </div>
+                    </div>
+                </div>
+                <div class="text-box position-relative">
+                    One of eight 
+                </div>
+            </div>
+            <div class="outer-box ">
+                <div class="hover-effect">
+                    <div class="img-box box-7">
+                        <img alt="Image" class="w-100 h-100 " src="https://c2.staticflickr.com/6/5499/30972532232_e9a298a0c5_m.jpg" />
+                        <div class="hover-box hover-box-7">
+                             <div class="icon icon-1"><i class="fa fa-shopping-bag" aria-hidden="true"></i></div>
+                            <div class="icon icon-2"><i class="fa fa-heart" aria-hidden="true"></i></div>
+                            <div class="icon icon-3"><i class="fa fa-eye" aria-hidden="true"></i></div> 
+                        </div>
+                    </div>
+                </div>
+                <div class="text-box position-relative">
+                    One of eight 
+                </div>
+            </div>
+            <div class="outer-box ">
+                <div class="hover-effect">
+                    <div class="img-box box-8">
+                        <img alt="Image" class="w-100 h-100 " src="https://c2.staticflickr.com/6/5499/30972532232_e9a298a0c5_m.jpg" />
+                        <div class="hover-box hover-box-8">
+                             <div class="icon icon-1"><i class="fa fa-shopping-bag" aria-hidden="true"></i></div>
+                            <div class="icon icon-2"><i class="fa fa-heart" aria-hidden="true"></i></div>
+                            <div class="icon icon-3"><i class="fa fa-eye" aria-hidden="true"></i></div> 
+                        </div>
+                    </div>
+                </div>
+                <div class="text-box position-relative">
+                    One of eight 
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <a id="button"></a> 
+    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="//npmcdn.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+    <script src="//npmcdn.com/imagesloaded@4/imagesloaded.pkgd.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.5.7/slick.min.js"></script>
+    <script src="asset/js/script.js"></script>
+</body>
+</html>

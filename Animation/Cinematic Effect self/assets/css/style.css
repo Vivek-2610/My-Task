@@ -1,0 +1,54 @@
+body {
+  transform-style: preserve-3d;
+  perspective: 2000px;
+  transform: scale(1); }
+
+.container {
+  padding: 100px;
+  perspective: 1200px;
+  margin-top: 200px;
+  transform-style: preserve-3d;
+  transition: all 3000ms;
+  animation: cinematic 10s linear 1s infinite backwards; }
+@keyframes cinematic {
+  0% {
+    transform: rotateY(20deg) translateY(0%); }
+  100% {
+    transform: rotateY(-20deg) translateY(-100%); } }
+  .container section {
+    margin: 50px 0 !important; }
+  .container .img {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transform: scale(1); }
+    .container .img img {
+      height: 100%;
+      width: 100%;
+      transform: translateZ(30px); }
+  .container .row col {
+    transform-style: preserve-3d;
+    perspective: 900px;
+    transform: scale(1); }
+  .container .head {
+    transform-style: preserve-3d;
+    perspective: 900px;
+    transform: scale(1); }
+    .container .head h1 {
+      font-size: 70px;
+      margin: 0 auto;
+      font-weight: 700;
+      transform: translateZ(30px); }
+  .container header {
+    transform-style: preserve-3d;
+    perspective: 900px;
+    transform: scale(1); }
+    .container header p {
+      margin: 20px 0;
+      margin-bottom: 50px; }
+  .container .banner {
+    padding: 50px; }
+    .container .banner h2 {
+      font-size: 40px;
+      font-weight: 700; }
+
+/*# sourceMappingURL=style.css.map */

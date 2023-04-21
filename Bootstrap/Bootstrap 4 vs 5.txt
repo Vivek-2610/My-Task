@@ -1,0 +1,33 @@
+Bootstrap 4
+Five level of breakpoint
+Jquery
+few color
+Form element appear differently in operating system 
+Glutter use in px
+Lack SVG icon
+jumbotron compatible
+dark mode in dropdown unable
+easy grid system
+no off-canvas element
+The APIs cannot be customized
+The positioning feature is absent
+Less CSS use
+normal form layout with no advance features
+support old version of internet explorer (8, 9)
+
+Bootstrap 5
+six level of breakpoint - xxl
+Replace jquery with Vanilla js 
+extra color added
+Form element appear same in all browser and operating system
+Glutter use font size set to rem
+Own SVG icon set
+jumbotron not compatible
+dark mode in dropdown is avalible
+complex grid system
+off-canvas element avalible
+Allows modifying APIs or develop own API
+Columns can be positioned
+More CSS properties also customized properties
+attractive features to make forms
+not support internet explorer

@@ -1,0 +1,28 @@
+body{background-color:rgb(0,0,0);}
+.container{display:flex;flex-wrap:wrap;position:relative;width:500px;}
+/* Boxes */
+.box-1,.box-2,.box-3,.box-4,.box-5,.box-6{width:248px;height:150px;}
+.box-2{background-color:#2e41e2;border-radius:35% 0;box-shadow:inset -10px 5px 0px 6px #2e40e29f,inset -20px 20px 15px 6px rgba(48,47,47,0.541),inset 5px -5px 15px 6px rgba(49,49,49,0.541);}
+.box-3{background-color:#f27216;border-radius:32% 0 0 32%;box-shadow:inset 2px 0px 0px 8px #f272169f,inset -11px 10px 15px 5px rgba(48,47,47,0.54),inset 15px -7px 15px 6px rgba(53,52,52,0.54);}
+.box-6{background-color:#707072;border-radius:0 0 35% 0;box-shadow:inset -14px -10px 0px 0px #70707296,inset -20px -15px 15px 6px rgba(54,53,53,0.54);}
+.box-6:after{content:'';position:absolute;left:0;top:100%;right:0;z-index:99;background:#000;width:100%;height:100px;}
+.box-2::before{content:'';position:absolute;left:0;top:0;right:0;z-index:99;background:#000;width:50%;height:150px;}
+.box-2::after{content:'';position:absolute;left:49.5%;top:33.33%;right:0;z-index:99;background:#000;width:50%;height:150px;}
+.box-6{position:relative;}
+/* Ball animation */
+.ball{z-index:9;position:absolute;display:block;width:50px;height:50px;border-radius:50%;background:radial-gradient(circle at 65% 0%,rgb(102,95,95) 0px,rgb(207,235,235) 3%,rgb(146,135,135) 58%,rgb(104,112,112) 78%);animation:ball 10s linear 1s infinite normal forwards;    /* animation: ball-1-move 12s infinite,bounce 2s infinite; */animation-iteration-count:infinite;right:5px;top:4px}
+@keyframes ball{
+    0%{right:5px;top:4px;}
+    20%{right:5px;top:70px;}
+    22.5%{right:5px;top:60px}
+    25%{right:5px;top:70px}
+    30%{right:39px;top:100px;}
+    50%{right:258px;top:100px;}
+    70%{right:258px;top:250px;}
+    73%{right:258px;top:240px;}
+    75%{right:258px;top:250px;}
+    80%{right:190px;top:250px;}
+    95%{right:190px;top:390px;}
+    97%{right:190px;top:400px;}
+    100%{right:190px;top:450px;}
+}

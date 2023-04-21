@@ -1,0 +1,800 @@
+<!doctype html>
+<html ⚡ lang="en">
+<head>
+    <meta charset="utf-8">
+      <title>Practice</title>
+      <script async src="https://cdn.ampproject.org/v0.js"></script>
+      <!-- ## Setup -->
+      <!-- Import the carousel component in the header. -->
+      <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+      <!-- Import the sidebar component in the header. -->
+      <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+      <!-- Import the `amp-fx-flying-carpet` component in the header. -->
+      <script async custom-element="amp-fx-flying-carpet" src="https://cdn.ampproject.org/v0/amp-fx-flying-carpet-0.1.js"></script>
+      <!--Import the `amp-fx-collection` extension in the header.-->
+      <script async custom-element="amp-fx-collection" src="https://cdn.ampproject.org/v0/amp-fx-collection-0.1.js"></script>
+      <!-- Import the amp-image-lightbox component in the header -->
+      <script async custom-element="amp-image-lightbox" src="https://cdn.ampproject.org/v0/amp-image-lightbox-0.1.js"></script>
+      <!--  Import the amp-iframe component in the header. -->
+      <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+      <!-- Import the amp-lightbox-gallery component in the header.  -->
+      <script async custom-element="amp-lightbox-gallery" src="https://cdn.ampproject.org/v0/amp-lightbox-gallery-0.1.js"></script>
+      <!-- Import the `amp-lightbox` component in the header -->
+      <script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script> 
+      <!--Import the `amp-selector` component.-->
+      <script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
+      <!--Import the `amp-social-share` component in the header.-->
+      <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
+      <!-- Import the amp-youtube component -->
+      <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+      <!-- `amp-bind` is required for interactive gameplay. -->
+      <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+      <!-- ... and `amp-selector` for implementing a simple survey. -->
+      <script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
+          
+
+      <link rel="canonical" href="https://amp.dev/documentation/examples/components/amp-carousel/index.html">
+      <meta name="viewport" content="width=device-width">
+      <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+      <style amp-custom>
+        :root {
+          --color-primary: #005AF0;
+          --color-text-light: #fff;
+          --space-1: .5rem;  /* 8px */
+          --space-2: 1rem;   /* 16px */
+          --space-3: 1.5rem; /* 24px */
+          --space-4: 2rem;   /* 32px */
+          --space-5: 3rem;   /* 48px */
+        }            
+        .amp-flying-carpet-text-border {
+          background-color: black;
+          color: white;
+          text-align: center;
+        }
+        .viewport-100 {
+          height: 100vh;
+        }
+
+
+        .blue-box, .red-box, .green-box {
+          width: 100%;
+          height: 280px;
+        }
+        .blue-box {
+          background: blue;
+          color: #fff;
+        }
+        .green-box {
+          background: green;
+          color: #fff;
+        }
+        .red-box {
+          background: red;
+          color: #111;
+        }
+
+
+        #custom-button .amp-carousel-button-prev {
+          left: 5%;
+          background-image: url('https://amp.dev/static/samples/img/carousel-arrow-left.png');
+        }
+        #custom-button .amp-carousel-button-next {
+          right: 5%;
+          background-image: url('https://amp.dev/static/samples/img/carousel-arrow-right.png');
+        }
+
+
+        .amp-sidebar-toolbar-target-shown {
+          display: none;
+        }
+        .overlay-text {
+          position: absolute;
+          bottom: var(--space-2);
+          left: var(--space-2);
+          z-index: 1;
+          pointer-events: none;
+          background-color: var(--color-primary);
+          color: var(--color-text-light);
+          padding: var(--space-1);
+          border-radius: 2px;
+          opacity: 0.7;
+        }
+
+
+        .lightbox {
+          background: rgba(0,0,0,0.8);
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .lightbox h1 {
+          color: white;
+        }
+
+
+        .radio-selector [option] {
+          display: flex;
+          align-items: center;
+        }
+        .radio-selector [option]:before {
+          transition: background 0.25s ease-in-out;
+          content: "";
+          display: inline-block;
+          width: 24px;
+          height: 24px;
+          margin: var(--space-1);
+          border-radius: 100%;
+          border: solid 1px var(--color-primary);
+        }
+        .radio-selector [option][selected]:before {
+          text-align: center;
+          content: "✓";
+          color: var(--color-text-light);
+          background-color: var(--color-primary);
+        }
+
+        /* Game */
+        .board-component {
+          margin: 5em auto;
+          max-width: 800px;
+          padding: 0 1em;
+        }
+        .results-component .hide {
+          display: none;
+        }
+        .results-component .show {
+          display: show;
+        }
+        .board-component table {
+          margin: auto;
+          border: 0;
+          border-collapse: collapse;
+        }
+        .board-component td {
+          border: 0;
+          padding: 0;
+          background-color: #ffffff;
+        }
+        .board-component .cell {
+          width: 5.25em;
+          height: 5.25em;
+          border-color: #5ADAFD;
+          border-style: solid;
+          border: 0;
+        }
+        .board-component .cell-vert {
+          border-left: 0.25em solid #5ADAFD;
+          border-right: 0.25em solid #5ADAFD;
+        }
+        .board-component .cell-horiz {
+          border-top: 0.25em solid #5ADAFD;
+          border-bottom: 0.25em solid #5ADAFD;
+        }
+        .board-component .win {
+          background: lightgrey;
+        }
+        .board-component .in-play {
+          background: none;
+        }
+        .board-component .grid-button {
+          width: 100%;
+          height: 100%;
+          border: 0;
+          box-shadow: none;
+          border-radius: 0px;
+          font-size: 2em;
+          padding: 0;
+          margin: 0;
+        }
+        .board-component .grid-button:active {
+          border: 0;
+        }
+        .reset-component {
+          margin: 2em auto;
+          display: flex;
+          justify-content: center;
+        }
+        .reset-component .reset-button {
+          font-size: 1rem;
+          line-height: 1.125rem;
+          padding: .7em .8em;
+          text-decoration: none;
+          white-space: nowrap;
+          word-wrap: normal;
+          vertical-align: middle;
+          cursor: pointer;
+          background-color: #fff;
+          color: #5ADAFD;
+          border: 1px solid #5ADAFD
+        }
+        /* Sliding Stepper */
+        .stepper.sliding {
+          position: relative;
+          overflow-x: hidden;
+          height: 300px;
+          max-width: 420px;
+          margin: var(--space-2) auto;
+        }
+        .stepper.sliding .page {
+          position: absolute;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+          width: 100%;
+          height: 100%;
+          padding: var(--space-2);
+          transition: transform 0.25s cubic-bezier(0, 0, 0.3, 1);
+        }
+        .stepper.sliding h3 + * {
+          margin-top: var(--space-2);
+        }
+        .stepper.sliding .page.active {
+          transform: translateX(0%);
+          pointer-events: auto;
+        }
+        .stepper.sliding .page:not(.active) {
+          opacity: 0.5;
+          pointer-events: none;
+        }
+        .stepper.sliding .page.next {
+          transform: translateX(100%);
+        }
+        .stepper.sliding .page.previous {
+          transform: translateX(-100%);
+        }
+        .stepper.sliding .back {
+          position: relative;
+          height: var(--space-4);
+          width: 100%;
+          max-width: 300px;
+          cursor: pointer;
+          line-height: var(--space-4);
+          border: none;
+          text-align: left;
+          padding: 0;
+          -webkit-appearance: none;
+          background: none;
+          color: var(--color-text-dark);
+          border: none;
+          font-size: 14px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          max-width: 100%;
+          width: 280px;
+          text-transform: none;
+          letter-spacing: inherit;
+        }
+        .stepper.sliding .back:after {
+          content: "";
+          position: absolute;
+          top: 10px;
+          right: 3px;
+          border: solid black;
+          border-width: 0 3px 3px 0;
+          display: inline-block;
+          padding: 3px;
+          transform: rotate(45deg);
+          -webkit-transform: rotate(45deg);
+        }
+        .stepper.sliding button {
+          padding: 0.25rem var(--space-2);
+          background: var(--color-primary);
+          color: var(--color-text-light);
+          border: 1px solid #fff;
+          font-size: 1rem;
+          line-height: 1.125rem;
+          padding: .7em .8em;
+          text-decoration: none;
+          white-space: nowrap;
+          word-wrap: normal;
+          vertical-align: middle;
+          cursor: pointer;
+          text-transform: uppercase;
+          letter-spacing: .2em;
+        }
+        .stepper.sliding .input {
+          position: relative;
+          margin: var(--space-3) 0;
+          display: inline-block;
+          max-width: 100%;
+          width: 300px;
+          min-width: 100px;
+          font-size: var(--space-2);
+          line-height: var(--space-3);
+        }
+        .stepper.sliding .input > input {
+          width: 100%;
+          margin-top: var(--space-2);
+          line-height: var(--space-3);
+          border: 0;
+          border-radius: 0;
+          border-bottom: 1px solid #4a4a4a;
+          background: 0 0;
+          color: #4a4a4a;
+          outline: 0;
+        }
+        .stepper.sliding .input > input:focus {
+          outline: 0;
+        }
+        .stepper.sliding .input > label {
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          color: var(--color-primary);
+          pointer-events: none;
+          font-size: .875rem;
+          line-height: var(--space-2);
+          opacity: 0;
+          animation: .2s;
+          animation-timing-function: cubic-bezier(.4,0,.2,1);
+          animation-fill-mode: forwards;
+        }
+        .stepper.sliding .input > label:after {
+          content: "";
+          height: 2px;
+          position: absolute;
+          bottom: 0;
+          left: 45%;
+          background: #003f93;
+          -webkit-transition: .2s;
+          transition: .2s;
+          -webkit-transition-timing-function: cubic-bezier(.4,0,.2,1);
+          transition-timing-function: cubic-bezier(.4,0,.2,1);
+          visibility: hidden;
+          width: 10px;
+        }
+        @keyframes move-input-label {
+          to {
+            opacity: 1;
+          }
+        }
+        .stepper.sliding .input input:focus::-webkit-input-placeholder {
+            opacity: 0;
+        }
+        .stepper.sliding .input > input:focus + label {
+          animation-name: move-input-label;
+        }
+        .stepper.sliding .input > input:focus + label:after {
+          left: 0;
+          width: 100%;
+          visibility: visible;
+        }
+
+        /* Survey styling */
+        amp-selector.poll [option][selected] {
+          outline: none;
+        }
+        amp-selector.poll [option] {
+          display: flex;
+          align-items: center;
+        }
+        amp-selector.poll [option]:before {
+          transition: background 0.25s ease-in-out;
+          content: "";
+          display: inline-block;
+          width: var(--space-2);
+          height: var(--space-2);
+          margin: var(--space-1);
+          border-radius: 100%;
+          border: solid 1px var(--color-primary);
+          font-size: 14px;
+          line-height: var(--space-2);
+        }
+        amp-selector.poll [option][selected]:before {
+          text-align: center;
+          content: "✓";
+          color: #fff;
+          background: var(--color-primary);
+        }
+        amp-selector.poll [option][selected]:focus {
+          outline: -webkit-focus-ring-color auto 5px;
+        }
+
+        /* preview style */
+        h2.preview-only {
+          margin: var(--space-2);
+          margin-top: var(--space-3);
+          margin-bottom: 0;
+        }
+        h2.preview-only + p {
+          margin: var(--space-1) var(--space-2);
+        }
+        .wrapper {
+          --padding: 0.25rem;
+          color: black;
+          background-color: white;
+          padding: var(--padding);
+        }
+
+        @media (prefers-color-scheme: dark) {
+          .wrapper, .wrapper h1 {
+            color: white;
+            background-color: black;
+          }
+
+          #dark-mode-checkbox,
+          #dark-mode-label {
+            display: none;
+          }
+        }
+
+        #dark-mode-checkbox:checked ~ * {
+          color: white;
+          background-color: black;
+        }
+        #dark-mode-checkbox,
+        #dark-mode-label {
+          position: absolute;
+          right: 0;
+        }
+        #dark-mode-checkbox {
+          display: none;
+        }
+      </style>
+</head>
+<body>
+    <div>
+        <input id="dark-mode-checkbox" type="checkbox">
+        <label id="dark-mode-label" for="dark-mode-checkbox">Turn on dark mode</label>
+        <div class="wrapper">
+         
+<!-- Slidebar -->
+    <amp-sidebar id="sidebar-right" class="sample-sidebar" layout="nodisplay" side="left">
+        <h3>Sidebar</h3>
+        <button on="tap:sidebar-right.close">Close sidebar</button>
+        <nav toolbar="(min-width: 784px)" toolbar-target="target-element-right">
+          <ul>
+            <li>Nav item 1</li>
+            <li>Nav item 2</li>
+            <li>Nav item 3</li>
+          </ul>
+        </nav>
+        <ul>
+          <li>Nav item 4</li>
+          <li>Nav item 5</li>
+          <li>Nav item 6</li>
+        </ul>
+    </amp-sidebar>
+    <button on="tap:sidebar-right.toggle">Toggle sidebar</button>
+    <div id="target-element-right"></div>
+
+<!-- carousel -->
+    <amp-carousel width="400" height="200" layout="responsive" role="region" type="slides" autoplay delay="2000" aria-label= "Carousel with custom button styles">
+        <amp-img src="download.jpg"  width="400"  height="300" alt="nature"></amp-img>
+        <amp-img src="download (1).jpg"  width="400"  height="300" alt="nature"></amp-img>
+        <amp-img src="download (2).jpg"  width="400"  height="300" alt="nature"></amp-img>
+        <amp-img src="download (3).jpg"  width="400"  height="300" alt="nature"></amp-img>
+    </amp-carousel> 
+    <amp-carousel width="400" height="200" layout="fixed-height" role="region" type="carousel"aria-label= "Carousel with custom button styles">
+        <amp-img src="download.jpg"  width="400"  height="300" alt="nature"></amp-img>
+        <amp-img src="download (1).jpg"  width="400"  height="300" alt="nature"></amp-img>
+        <amp-img src="download (2).jpg"  width="400"  height="300" alt="nature"></amp-img>
+        <amp-img src="download (3).jpg"  width="400"  height="300" alt="nature"></amp-img>
+    </amp-carousel> 
+    <amp-carousel height="300" layout="fixed-height" type="slides" role="region" aria-label="Carousel with arbitrary HTML content">
+      <div>
+        <div class="blue-box">
+          This is a blue box.
+        </div>
+      </div>
+      <div>
+        <div class="red-box">
+          This is a red box.
+        </div>
+      </div>
+      <div>
+        <div class="green-box">
+          This is a green box.
+        </div>
+      </div>
+    </amp-carousel>
+
+<!-- Flying-carpet -->
+    <strong>Scroll Down to see the amp-fx-flying-carpet in action</strong>
+    <div class="viewport-100"></div>
+    <div>
+      <div class="amp-flying-carpet-text-border">Advertising</div>
+      <amp-fx-flying-carpet height="300px">
+        <amp-ad width="300" height="600" layout="fixed" type="doubleclick" data-slot="/35096353/amptesting/formats/flying_carpet">
+        </amp-ad>
+      </amp-fx-flying-carpet>
+      <div class="amp-flying-carpet-text-border">Advertising</div>
+    </div>
+    <div class="viewport-100"></div>
+    <amp-fx-flying-carpet height="300px">
+      <amp-img src="download (3).jpg" width="1280" height="853" alt="an image">
+      </amp-img>
+    </amp-fx-flying-carpet>
+    <div class="viewport-100"></div>  
+
+<!-- Parallax -->
+    <div class="header">
+      <amp-img width="1600" height="900" layout="responsive" src="https://images.unsplash.com/photo-1484961361402-1ee9b1c7accb?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9b58d12098d2e6d4a1199ed426772eb9&auto=format&fit=crop&w=1001&q=80"></amp-img>
+      <h1 amp-fx="parallax" data-parallax-factor="1.5">
+          <span class="title">Lorem Ipsum</span>
+      </h1>
+      <div class="parallax-image-window">
+        <amp-img amp-fx="parallax" data-parallax-factor="1.13" width="618" height="583" layout="responsive" src="https://images.unsplash.com/photo-1527683040093-3a2b80ed1592?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3493d310a725643c1aa1cd201065d31c&auto=format&fit=crop&w=1130&q=80"></amp-img>
+      </div>
+    </div>
+
+<!-- Lightbox -->
+    <figure>
+      <amp-img on="tap:lightbox1" role="button" tabindex="0" src="download (1).jpg" alt="Picture of a dog" title="Picture of a dog, view in lightbox" layout="responsive" width="300" height="246"></amp-img>
+      <amp-image-lightbox id="lightbox1" layout="nodisplay"></amp-image-lightbox>
+      <figcaption>Border Collie.</figcaption>
+    </figure>
+
+<!-- I-frame -->
+    <amp-iframe width="500" height="281" title="Netflix House of Cards branding: The Stack" layout="responsive" sandbox="allow-scripts allow-same-origin allow-popups" allowfullscreen frameborder="0" src="https://player.vimeo.com/video/140261016">
+      <amp-img layout="fill" src="https://i.vimeocdn.com/video/536538454_640.webp" placeholder></amp-img>
+    </amp-iframe>
+
+<!-- Photo Gallery -->
+    <div>
+        <amp-img lightbox="hero" src="download (1).jpg" width="400" height="300" layout="responsive">
+          <span class="overlay-text">See photo gallery</span>
+        </amp-img>
+        <div hidden>
+          <amp-img lightbox="hero" src="download (2).jpg" layout="responsive" width="400" height="710"></amp-img>
+          <amp-img lightbox="hero" src="download (3).jpg" width="400" height="300" layout="responsive"></amp-img>
+        </div>
+    </div>
+
+<!-- Pop-up -->
+    <div>
+      <amp-lightbox id="my-lightbox" layout="nodisplay">
+        <div class="lightbox" on="tap:my-lightbox.close" role="button" tabindex="0">
+          <h1>Hello World!</h1>
+        </div>
+      </amp-lightbox>
+      <button on="tap:my-lightbox">
+        Open lightbox
+      </button>
+    </div>
+
+<!-- Selector Radio -->
+    <form action="#" method="get" target="_top">
+      <amp-selector class="radio-selector" layout="container" name="my-selector">
+        <div option="a">Option A</div>
+        <div option="b">Option B</div>
+        <div option="c">Option C</div>
+      </amp-selector>
+      <button>Submit</button>
+    </form>
+
+<!-- Social-Share -->
+    <div>
+      <amp-social-share type="email" aria-label="Share by email"></amp-social-share>
+      <amp-social-share type="facebook" aria-label="Share on Facebook" data-param-app_id="254325784911610"></amp-social-share>
+      <amp-social-share type="linkedin" aria-label="Share on LinkedIn"></amp-social-share>
+      <amp-social-share type="pinterest" aria-label="Share on Pinterest" data-param-media="https://amp.dev/static/samples/img/amp.jpg"></amp-social-share>
+      <amp-social-share type="tumblr" aria-label="Share on Tumblr"></amp-social-share>
+      <amp-social-share type="twitter" aria-label="Share on Twitter"></amp-social-share>
+      <amp-social-share type="whatsapp" aria-label="Share on WhatsApp"></amp-social-share>
+      <amp-social-share type="line" aria-label="Share on Line"></amp-social-share>
+    </div>
+
+<!-- YouTube -->
+    <amp-youtube width="480" height="270" layout="responsive" data-videoid="lBTCB7yLs8Y"></amp-youtube>
+
+<!-- Game -->
+    <amp-state id="gameState">
+      <script type="application/json">
+        {
+          "currentPlayer": 1,
+          "displayValues": {
+            "-1": "O",
+            "1": "⚡"
+          }
+        }
+      </script>
+    </amp-state>
+  
+   
+    <div class="results-component">
+      <h1 [class]="max(abs(tr),abs(br),abs(lc),abs(rc),abs(fd),abs(bd),abs(mc),abs(mr)) == 3 ? 'hide' : 'show'">Let's play!</h1>
+      <h1 [class]="max(tr,br,lc,rc,fd,bd,mc,mr) == 3 ? 'show' : 'hide'" class="hide">⚡ wins!!!</h1>
+      <h1 [class]="min(tr,br,lc,rc,fd,bd,mc,mr) == -3 ? 'show' : 'hide'" class="hide">O wins!!!</h1>
+    </div>
+
+    <div class="board-component">
+        <table>
+          <tbody><tr>
+            <td class="cell">
+              <button on="tap:AMP.setState({
+                            tr: tr + gameState.currentPlayer,
+                            lc: lc + gameState.currentPlayer,
+                            bd: bd + gameState.currentPlayer,
+                            board: {
+                              a: gameState.displayValues[gameState.currentPlayer]
+                            },
+                            gameState: {
+                              currentPlayer: gameState.currentPlayer * -1
+                            }
+                          })" [text]="board.a ? board.a : ''" [class]="max(abs(tr),abs(lc),abs(bd)) == 3 ? 'grid-button win' : 'grid-button in-play'" [disabled]="board.a || max(abs(tr),abs(br),abs(lc),abs(rc),abs(fd),abs(bd),abs(mc),abs(mr)) == 3" class="grid-button in-play">
+              </button>
+            </td>
+            <td class="cell cell-vert">
+              <button on="tap:AMP.setState({
+                            tr: tr + gameState.currentPlayer,
+                            mc: mc + gameState.currentPlayer,
+                            board: {
+                              b: gameState.displayValues[gameState.currentPlayer]
+                            },
+                            gameState: {
+                              currentPlayer: gameState.currentPlayer * -1
+                            }
+                          })" [text]="board.b ? board.b : ''" [class]="max(abs(tr),abs(mc)) == 3 ? 'grid-button win' : 'grid-button in-play'" [disabled]="board.b || max(abs(tr),abs(br),abs(lc),abs(rc),abs(fd),abs(bd),abs(mc),abs(mr)) == 3" class="grid-button in-play">
+              </button>
+            </td>
+            <td class="cell">
+              <button on="tap:AMP.setState({
+                            tr: tr + gameState.currentPlayer,
+                            rc: rc + gameState.currentPlayer,
+                            fd: fd + gameState.currentPlayer,
+                            board: {
+                              c: gameState.displayValues[gameState.currentPlayer]
+                            },
+                            gameState: {
+                              currentPlayer: gameState.currentPlayer * -1
+                            }
+                          })" [text]="board.c ? board.c : ''" [class]="max(abs(tr),abs(rc),abs(fd)) == 3 ? 'grid-button win' : 'grid-button in-play'" [disabled]="board.c || max(abs(tr),abs(br),abs(lc),abs(rc),abs(fd),abs(bd),abs(mc),abs(mr)) == 3" class="grid-button in-play">
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td class="cell cell-horiz">
+              <button on="tap:AMP.setState({
+                            mr: mr + gameState.currentPlayer,
+                            lc: lc + gameState.currentPlayer,
+                            board: {
+                              d: gameState.displayValues[gameState.currentPlayer]
+                            },
+                            gameState: {
+                              currentPlayer: gameState.currentPlayer * -1
+                            }
+                          })" [text]="board.d ? board.d : ''" [class]="max(abs(mr),abs(lc)) == 3 ? 'grid-button win' : 'grid-button in-play'" [disabled]="board.d || max(abs(tr),abs(br),abs(lc),abs(rc),abs(fd),abs(bd),abs(mc),abs(mr)) == 3" class="grid-button in-play">
+              </button>
+            </td>
+            <td class="cell cell-horiz cell-vert">
+              <button on="tap:AMP.setState({
+                            mr: mr + gameState.currentPlayer,
+                            mc: mc + gameState.currentPlayer,
+                            fd: fd + gameState.currentPlayer,bd: bd + gameState.currentPlayer,
+                            board: {
+                              e: gameState.displayValues[gameState.currentPlayer]
+                            },
+                            gameState: {
+                              currentPlayer: gameState.currentPlayer * -1
+                            }
+                          })" [text]="board.e ? board.e : ''" [class]="max(abs(mr),abs(mc),abs(fd),abs(bd)) == 3 ? 'grid-button win' : 'grid-button in-play'" [disabled]="board.e || max(abs(tr),abs(br),abs(lc),abs(rc),abs(fd),abs(bd),abs(mc),abs(mr)) == 3" class="grid-button in-play">
+              </button>
+            </td>
+            <td class="cell cell-horiz">
+              <button on="tap:AMP.setState({
+                            mr: mr + gameState.currentPlayer,
+                            rc: rc + gameState.currentPlayer,
+                            board: {
+                              f: gameState.displayValues[gameState.currentPlayer]
+                            },
+                            gameState: {
+                              currentPlayer: gameState.currentPlayer * -1
+                            }
+                          })" [text]="board.f ? board.f : ''" [class]="max(abs(mr),abs(rc)) == 3 ? 'grid-button win' : 'grid-button in-play'" [disabled]="board.f || max(abs(tr),abs(br),abs(lc),abs(rc),abs(fd),abs(bd),abs(mc),abs(mr)) == 3" class="grid-button in-play">
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td class="cell">
+              <button on="tap:AMP.setState({
+                            br: br + gameState.currentPlayer,
+                            lc: lc + gameState.currentPlayer,
+                            fd: fd + gameState.currentPlayer,
+                            board: {
+                              g: gameState.displayValues[gameState.currentPlayer]
+                            },
+                            gameState: {
+                              currentPlayer: gameState.currentPlayer * -1
+                            }
+                          })" [text]="board.g ? board.g : ''" [class]="max(abs(br),abs(lc),abs(fd)) == 3 ? 'grid-button win' : 'grid-button in-play'" [disabled]="board.g || max(abs(tr),abs(br),abs(lc),abs(rc),abs(fd),abs(bd),abs(mc),abs(mr)) == 3" class="grid-button in-play">
+              </button>
+            </td>
+            <td class="cell cell-vert">
+              <button on="tap:AMP.setState({
+                            br: br + gameState.currentPlayer,
+                            mc: mc + gameState.currentPlayer,
+                            board: {
+                              h: gameState.displayValues[gameState.currentPlayer]
+                            },
+                            gameState: {
+                              currentPlayer: gameState.currentPlayer * -1
+                            }
+                          })" [text]="board.h ? board.h : ''" [class]="max(abs(br),abs(mc)) == 3 ? 'grid-button win' : 'grid-button in-play'" [disabled]="board.h || max(abs(tr),abs(br),abs(lc),abs(rc),abs(fd),abs(bd),abs(mc),abs(mr)) == 3" class="grid-button in-play">
+              </button>
+            </td>
+            <td class="cell">
+              <button on="tap:AMP.setState({
+                            br: br + gameState.currentPlayer,
+                            rc: rc + gameState.currentPlayer,
+                            bd: bd + gameState.currentPlayer,
+                            board: {
+                              i: gameState.displayValues[gameState.currentPlayer]
+                            },
+                            gameState: {
+                              currentPlayer: gameState.currentPlayer * -1
+                            }
+                          })" [text]="board.i ? board.i : ''" [class]="max(abs(br),abs(rc), abs(bd)) == 3 ? 'grid-button win' : 'grid-button in-play'" [disabled]="board.i || max(abs(tr),abs(br),abs(lc),abs(rc),abs(fd),abs(bd),abs(mc),abs(mr)) == 3" class="grid-button in-play">
+              </button>
+            </td>
+          </tr>
+        </tbody></table>
+      </div>
+    <!-- Reset game -->
+      <div class="reset-component">
+        <button class="reset-button" on="tap:AMP.setState({
+                    gameState: {
+                      currentPlayer: 1,
+                      displayValues: {
+                        '-1': 'O',
+                        '1': '⚡'
+                      }
+                    },
+                    tr: null,
+                    mr: null,
+                    br: null,
+                    lc: null,
+                    mc: null,
+                    rc: null,
+                    fd: null,
+                    bd: null,
+                    board: null
+                  })">
+          Restart game
+        </button>
+      </div>
+
+<!-- Form Slider -->
+      <form class="stepper sliding" method="post" action-xhr="/documentation/examples/api/submit-form-input-text-xhr" novalidate on="submit: AMP.setState({ slidingStepperPage: 2 });submit-success: AMP.setState({ slidingStepperPage: 3 });submit-error: AMP.setState({ slidingStepperPage: 4 });">
+        <section class="page active" [class]="slidingStepperPage > 0 ? 'page previous' : 'page active'">
+          <h3>Sign in</h3>
+          <div class="input">
+            <input type="email" value name="email" autocomplete="email" id="id1" placeholder="Enter your Email" on="input-debounced: AMP.setState({ email: event.value })">
+            <label for="ip1" aria-hidden="true">
+              Enter your Email
+            </label>
+          </div>
+          <button type="button" on="tap:AMP.pushState({ slidingStepperPage: slidingStepperPage + 1 })" disabled [disabled]="!email">next</button>
+        </section>
+        <section class="page next" [class]="slidingStepperPage < 1 ? 'page next' :(slidingStepperPage > 1 ? 'page previous' : 'page active')">
+          <h3>Welcome</h3>
+          <button class="back" [text]="email" on="tap:AMP.pushState({ slidingStepperPage: slidingStepperPage - 1 })" disabled [disabled]="slidingStepperPage != 1" type="button"></button>
+          <div class="input">
+            <input type="password" value name="password" id="id2" placeholder="Enter your Password" disabled [disabled]="slidingStepperPage != 1" on="input-debounced: AMP.setState({ password: event.value })">
+            <label for="ip2" aria-hidden="true">
+              Enter your Password
+            </label>
+          </div>
+          <button disabled [disabled]="slidingStepperPage != 1 || !password" type="submit">submit</button>
+        </section>
+        <section class="page next" [class]="slidingStepperPage < 2 ? 'page next' :(slidingStepperPage > 2 ? 'page previous' : 'page active')">
+            <p>Submitting ...</p>
+        </section>
+        <section class="page next" [class]="slidingStepperPage < 3 ? 'page next' :(slidingStepperPage > 3 ? 'page previous' : 'page active')">
+            <h3>Success</h3>
+            <p>You did it!</p>
+        </section>
+        <section class="page next" [class]="slidingStepperPage < 4 ? 'page next' :(slidingStepperPage > 4 ? 'page previous' : 'page active')">
+          <h3>Something went wrong. </h3>
+          <button on="tap:AMP.setState({ slidingStepperPage: 0 })" type="button">Try again</button>
+        </section>
+      </form>
+    </div>
+</div>
+</body></html>

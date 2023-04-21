@@ -1,0 +1,106 @@
+body{margin:0;box-sizing:border-box;}
+
+/* backdround - image */
+.bg-img::before{position:absolute;left:0;top:0;width:100%;background:url('./../img/BG.jpg');background-size:cover;content:"";height:70%;}
+.bg-img{position:relative;}
+.fixed{position:relative;z-index:99;}
+.text{font-size:20px;}
+.container{text-align:center;color:white;width:100%;max-width:500px;margin:0 auto;padding-top:200px;}
+.banner{position:relative;display:flex;justify-content:center;}
+
+/* laptop */
+.laptop{display:flex;justify-content:center;width:100%;}
+.scn{z-index:1;margin:0 auto;position:relative;}
+
+/* scroll-img */
+.scroll-img{position:absolute;width:100%;margin:0 auto;height:79%;z-index:2;bottom:12%;}
+.frame{position:relative;height:100%;width:100%;display:flex;justify-content:center;}
+.screen-img{object-fit:cover;object-position:top center;transition:object-position 6s ease-in-out;z-index:2;height:100%;width:1100px;}
+.screen-img:hover{object-position:bottom center;}
+
+/* overlay */
+.overlay-img-scroll{position:relative;overflow:hidden;}
+.overlay{position:absolute;left:0;top:0;margin:0 auto;height:100%;width:0%;background:#2520237a;z-index:22;transition:width 2s;}
+.overlay-img-scroll:hover .overlay{width:100%;}
+
+/* Media */
+@media only screen and (max-width:1880px){
+    .screen-img{position:absolute;margin:0 auto;left:17.5%;width:65%;z-index:5;}
+    .overlay{left:17.5%;}
+    .overlay-img-scroll:hover .overlay{width:65%;}
+    .laptop{width:100%;}
+    .laptop-img{width:100%;}
+    .overlay-img-scroll{position:absolute;left:0;right:0;width:100%;height:100%;overflow:hidden;}
+}
+
+/* @media only screen and (max-width:1100) {
+    .container{
+        padding-top:225px;
+    }
+}
+@media only screen and (max-width:575) {
+    .text{
+        font-size: 10px;
+    }
+    .container{
+        padding-top:250px;
+    }
+} */
+
+/* @media only screen and (max-width:1440px) {
+    .screen-img{
+        position: absolute;
+        margin: 0 auto;
+        left: 17.5%;
+        width: 65%;
+    }
+    .laptop{
+        width: 100%;
+    }
+    .laptop-img{
+        width: 100%;
+    }
+} */
+
+/* .bg-img{
+    background-image: url('./../img/BG.jpg');
+    height: 800px;
+    width: 100%;
+    background-size: cover;
+    position: relative;
+}
+p{
+    font-size: 20px;
+}
+.container{
+    text-align: center;
+    color: white;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding-top: 200px;
+}
+
+.scn{
+    z-index: 1;
+    position: relative;
+    margin: 0 auto;
+    top: -20%;
+}
+.banner{
+    position: relative;
+}
+.screen-img {
+    width: 66%;
+    height: 79%;
+    object-fit: cover;
+    object-position: top center;
+    transition: all 6s ease-in-out;
+    position: absolute;
+    left: 17%;
+    bottom: 12%;
+    z-index: 2;
+}
+.screen-img:hover {
+    object-position: bottom center;
+} */

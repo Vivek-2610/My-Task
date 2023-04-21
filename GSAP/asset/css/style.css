@@ -1,0 +1,33 @@
+body{
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.header{
+    height: 15vh;
+    background-color: aqua;
+}
+.links{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    color: brown;
+}
+.sidebar{
+    background-color: rgb(0, 255, 55);
+    width: 15vw;
+}
+.content{
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+}
+.button{
+    align-self: center;
+}
+.footer{
+    height: 15vh;
+    background-color: rgb(44, 11, 190);
+}

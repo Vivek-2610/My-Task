@@ -1,0 +1,75 @@
+@import "variables";
+// mixin
+@mixin acc-bg($acc-bg,$color:white){
+    background-color: $acc-bg;
+    color: $color;
+}
+@mixin margin($position,$value){
+    // Interpolation
+    margin-#{$position}:$value + px ;
+}
+
+section{
+    // margin: $margin-50+px 0;
+    @include margin(top, 50);
+    @include margin(bottom, 50);
+    @include margin(left, 0);
+    @include margin(right, 0);
+}
+.animate__animated {
+    -webkit-animation-fill-mode: backwards;
+    animation-fill-mode: backwards;
+}
+.animate-box{
+    height: 50px; width: 50px; opacity: 0.8;
+}
+.animaiton{
+    height: 500px; width: 500px;
+}
+// .navbar{
+//     background-color: $nav-bg ;
+//     .btn{
+//         background-color: $nav-button;
+//     }
+//     .dropdown-item{
+//         color: $black-color;
+//     }
+//     ul{
+//         li{
+//             background-color: $nav-button;
+//             color: $black-color;
+//             margin: 0 2px;
+//             border-radius: $border-radius;
+
+//             &:hover{
+//                 background-color: $nav-bg;
+//                 color: $nav-color;
+//             }
+//         }
+//     }
+
+// }
+// .accordion-section{
+//     .item-1{
+//         @include acc-bg($red);
+//     }
+//     .head-1{
+//         background-color: $red;
+//         color: $nav-button;
+//     }
+//     .item-2{
+//         @include acc-bg($blue);
+//     }
+//     .head-2{
+//         background-color: $blue;
+//         // extend
+//         @extend .head-1
+//     }
+//     .item-3{
+//         @include acc-bg($green);
+//     }
+//     .head-3{
+//         background-color: $green;
+//         @extend .head-1
+//     }
+// }

@@ -1,0 +1,72 @@
+$colors: (
+  orb1: ( color1: #fd1549, color2: #8c005e, color3: #ff1055 ),
+  orb2: ( color1: #00fff7, color2: #00328c, color3: #00f2ff ),
+  orb3: ( color1: #00ff40, color2: #008c36, color3: #00ff77 ),
+  orb4: ( color1: #fff700, color2: #8c7300, color3: #ffee00 )
+);
+
+@function getColor($orb, $color) {
+  @return map-get(map-get($colors, $orb), $color);
+}
+
+body {
+  background: #09061b;
+  margin: 170px auto;
+  position: relative;
+  width: 250px;
+  height: 250px;
+}
+
+.orb {
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  mix-blend-mode: lighten;
+  // Try screen
+  
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  } 
+  
+  &::before {
+    background: #09061b;
+  }
+  
+  &::after {
+    mix-blend-mode: color-dodge;
+  }
+}
+
+@for $n from 1 through 4 {
+  .orb:nth-child(#{$n}) {
+    animation: anim-#{$n} 7s infinite ease-in-out;
+    transform: rotate($n * 90deg) translate3d(150px,0,0);
+    
+    &::after {
+    background: radial-gradient(
+      getColor(orb#{$n}, color1),
+      #000 31%,
+      getColor(orb#{$n}, color2) 34%,
+      #000 52%,
+      getColor(orb#{$n}, color3) 60%,
+      #000 70%);
+    }
+  }
+  
+  @keyframes anim-#{$n} {
+     33% { transform: rotate($n * 90deg) translate3d(20px, 0, 0) rotateY(60deg); }
+     66% { transform: translate3d(20px, 0, 0) rotate($n * 90deg) rotateZ(180deg) rotateY(180deg); }
+    100% { transform: rotate($n * 90deg) translate3d(150px, 0, 0) rotateX(180deg); }
+  }
+}
+
