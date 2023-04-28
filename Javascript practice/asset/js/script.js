@@ -150,7 +150,9 @@ function fun(){
 // document.getElementById("demo").innerHTML = index; 
 
 //// String lastIndexOf()
-
+let text = "Please locate where 'locate' occurs!";
+let index = text.lastIndexOf("locate");
+document.getElementById("demo").innerHTML = index;
 
 //// String search()
 //// String match()

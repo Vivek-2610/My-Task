@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="mb-44"> 
+<nav class="bg-black p-5 text-white md:flex  justify-between align-middle">
+    <h1 class="bg-white text-black rounded-2xl p-3 ml-10 font-bold text-2xl"> Hello</h1>
+    <ul class="flex justify-end px-20 space-x-8 items-center flex-wrap">
+        <li class="cursor-pointer">Home</li>
+        <li class="cursor-pointer">Service</li>
+        <li class="cursor-pointer">About</li>
+    </ul>
+</nav>
+<main class=" xs:bg-teal-600 bg-red-300 flex justify-around">
+    <div class="main pl-9 py-40" >
+        <div class="text-6xl ">
+        Lorem ipsum dolor sit amet.
+        </div>
+        <p class="py-3 w-1/3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium ea mollitia recusandae voluptatibus, soluta natus ducimus, vitae, perspiciatis fugiat fugit odit vero dolore laborum temporibus?</p>
+        <div class="buttons">
+            <button class=" bg-purple-600 px-3 py-2 rounded-2xl text-white hover:text-slate-600 hover:bg-purple-300 mx-2 hover:border-2 hover:border-black">Button</button>
+            <button class=" bg-purple-600 px-3 py-2 rounded text-white hover:text-slate-600 hover:bg-purple-300 mx-2 hover:border-2 hover:border-black">Button</button>
+        </div>
+    </div>
+    <div class="flex items-center -ml-24"><img src="assets/image/Banner-bg.jpg" class="w-96" alt="" srcset=""></div>
+</main>
+<hr>
+<div class="container mx-auto my-6">
+    <div class="columns-1  hover:columns-3 md:columns-2 lg:columns-3 divide-x-4 divide-orange-800 divide-dashed">
+        <div class="p-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est dolore asperiores, modi ad eos reprehenderit maxime quisquam necessitatibus soluta rerum!</div>
+        <div class="p-4">Repudiandae laudantium quam asperiores! Atque libero accusantium, sunt in unde, labore fugit consequuntur nulla voluptate accusamus obcaecati quisquam, magnam nobis.</div>
+        <div class="p-4">Dignissimos molestias saepe sequi. Ut ab enim cumque laborum ipsum ipsa ducimus non sunt, possimus eaque neque vero vel illum!</div>
+        <div class="p-4">Veniam repudiandae sit tempora, beatae expedita et, minus earum sunt atque provident inventore laudantium alias in nulla velit laborum itaque.</div>
+        <div class="p-4">Doloremque nobis error sint eaque rem atque ratione dolore ex temporibus, rerum omnis. Molestiae, dolores nobis? Quasi delectus illo voluptatum.</div>
+        <div class="p-4">Minus deserunt ipsa assumenda, laborum debitis earum ducimus, eum dignissimos accusantium blanditiis veniam facilis magni, velit atque ea asperiores voluptatibus.</div>
+    </div>
+</div>
+<div class="container mx-auto my-6">
+    ]<span class="box-decoration-slice hover:box-decoration-clone bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 ...">
+        Hello<br>
+        World
+      </span><br>
+      <span class="box-decoration-clone hover:box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 ...">
+        Hello<br>
+        World
+      </span>
+</div>
+<div class="container mx-auto my-6 text-center">
+    <div class="flex flex-row-reverse">
+        <div class="basis-1/4 bg-slate-500 mx-2">01</div>
+        <div class="basis-1/4 bg-slate-500 mx-2">02</div>
+        <div class="basis-1/2 bg-slate-500 mx-2">03</div>
+      </div>
+</div>
+<div class="container mx-auto my-6 text-center">
+    <div class="flex flex-row gap-4">
+        <div class="basis-1/4 bg-slate-500  order-last">01</div>
+        <div class="basis-1/4 bg-slate-500 ">02</div>
+        <div class="basis-1/2 bg-slate-500 ">03</div>
+      </div>
+</div>
+<div class="container mx-auto my-6 text-center">
+    <div class="flex flex-col-reverse gap-2">
+        <div class="bg-red-300 ">01</div>
+        <div class="bg-red-300 ">02</div>
+        <div class="bg-red-300 ">03</div>
+      </div>
+</div>
+<div class="container mx-auto my-6 text-center">
+    <div class="grid grid-cols-1 grid-flow-row-dense lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-2">
+        <div class="bg-slate-700">01</div>
+        <div class="bg-slate-700 col-span-2">02</div>
+        <div class="bg-slate-700">03</div>
+        <div class="bg-slate-700">04</div>
+        <div class="bg-slate-700 col-start-4">05</div>
+        <div class="bg-slate-700">06</div>
+        <div class="bg-slate-700">07</div>
+        <div class="bg-slate-700">08</div>
+        <div class="bg-slate-700 row-end-3 row-span-3">09</div>
+        <div class="bg-slate-700">10</div>
+        <div class="bg-slate-700 row-start-2 row-span-2">11</div>
+        <div class="bg-slate-700">12</div>
+      </div>
+</div>
+<div class="container mx-auto my-6 text-center">
+    <div class="grid grid-rows-3 grid-flow-col gap-4">
+        <div class="row-span-3 bg-red-300 ...">01</div>
+        <div class="col-span-2 bg-red-300 ...">02</div>
+        <div class="row-span-2 bg-red-300 col-span-2 ...">03</div>
+      </div>
+</div>
+<div class="container mx-auto my-6 text-center">
+    <div class="grid grid-cols-2 gap-4 place-content-center h-48 ...">
+        <div class="row-span-3 bg-red-300">01</div>
+        <div class="row-span-3 bg-red-300">02</div>
+        <div class="row-span-3 bg-red-300">03</div>
+        <div class="row-span-3 bg-red-300">04</div>
+      </div>
+</div>
+<div class="container mx-auto my-6 text-center bg-indigo-700">
+    <div class="flex space-x-4 ...">
+        <div></div>
+        <div class="bg-slate-700 w-full">01</div>
+        <div class="bg-slate-700 w-full">02</div>
+        <div class="bg-slate-700 w-full">03</div>
+        <div></div>
+      </div>
+</div>
+<div class="container mx-auto my-6 text-center bg-amber-600">
+    <div class="flex flex-col space-y-4 ...">
+        <div></div>
+        <div class="bg-slate-700">01</div>
+        <div class="bg-slate-700">02</div>
+        <div class="bg-slate-700">03</div>
+        <div></div>
+      </div>
+</div>
+<div class="container mx-auto my-6 text-center">
+    <p class="diagonal-fractions">
+        1/2 3/4 5/6
+      </p>
+</div>
+<div class="container mx-auto my-6 w-1/3">
+    <article>
+        <time>Mar 10, 2020</time>
+        <h2>Boost your conversion rate</h2>
+        <p class="line-clamp-3">Nulla dolor velit adipisicing duis excepteur esse in duis nostrud occaecat mollit incididunt deserunt sunt. Ut ut sunt laborum ex occaecat eu tempor labore enim adipisicing minim ad. Est in quis eu dolore occaecat excepteur fugiat dolore nisi aliqua fugiat enim ut cillum. Labore enim duis nostrud eu. Est ut eiusmod consequat irure quis deserunt ex. Enim laboris dolor magna pariatur. Dolor et ad sint voluptate sunt elit mollit officia ad enim sit consectetur enim.</p>
+        <div>
+          Lindsay Walton
+        </div>
+      </article>
+</div>
+<div class="container mx-auto my-6 text-center">
+    <ul class="list-inside list-image-[url(assets/image/pngtree-check-mark-icon-design-template-vector-isolated-png-image_711433.jpg)]">
+        <li>5 cups chopped Porcini mushrooms</li>
+        <li>5 cups chopped Porcini mushrooms</li>
+        <li>5 cups chopped Porcini mushrooms</li>
+        <li>5 cups chopped Porcini mushrooms</li>
+        <li>5 cups chopped Porcini mushrooms</li>
+      </ul>
+</div>
+<div class="container mx-auto my-6 text-center">
+
+</div>
+<div class="container mx-auto my-6">
+    <ul class="list-inside list-disc line-through decoration-emerald-500 decoration-double decoration-2 uppercase">
+      <li>5 cups chopped Porcini mushrooms</li>
+      <li>5 cups chopped Porcini mushrooms</li>
+      <li>5 cups chopped Porcini mushrooms</li>
+      <li>5 cups chopped Porcini mushrooms</li>
+      <!-- ... -->
+    </ul>
+
+    <ul class="list-outside list-disc capitalize ">
+      <li>5 cups chopped Porcini mushrooms</li>
+      <li>Higher resolution means more than just a better-quality image. With a Retina
+        6K display, <a class="text-blue-600 after:content-['_↗'] ..." href="https://www.
+        apple.com/pro-display-xdr/" target="_blank">Pro Display XDR</a> gives you
+        nearly 40 percent more screen real estate than a 5K display.</li>
+      <li>5 cups chopped Porcini mushrooms</li>
+      <li class="indent-96 hyphens-manual">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum voluptatem quos illum, vitae libero dolorum mollitia, nam alias eaque unde expedita esse. Error cupiditate quae voluptates odio tempore facilis numquam, impedit neque ea molestiae ipsum illum ipsa? Voluptatem quia,  temporibus quod omnis nam, explicabo ab porro doloribus eveniet magnam natus cumque nisi magni pariatur perspiciatis eos obcaecati libero, repellat vitae! Laudantium, placeat atque cumque voluptatibus laborum fugiat ducimus enim perspiciatis amet minus recusandae dignissimos delectus quibusdam tempora eos, error incidunt eaque ut. Totam quae deserunt aut non ducimus. Officiis minima eveniet quaerat. Voluptate animi ipsum quos minus aut alias quod quis officiis laudantium debitis? Ut, repellendus totam. Debitis sit sed labore quam facere hic magnam nostrum! Eveniet labore animi atque recusandae minima natus necessitatibus asperiores. Officia reiciendis voluptate nulla voluptas quas cumque labore accusamus, dicta molestias adipisci. Facere recusandae voluptas veniam culpa excepturi rerum voluptatem natus repudiandae nihil molestias cupiditate ea consequuntur obcaecati architecto magnam, eos aperiam consectetur, adipisci ex? Cumque, ipsum voluptas! Vero nam voluptates nesciunt voluptas deleniti cumque iusto non debitis quis tenetur placeat dolores similique, eveniet laborum libero, sit a sequi, consectetur corrupti corporis? Unde dolor ut expedita quaerat voluptates eligendi facere minima numquam vero voluptate.</li>
+      <!-- ... -->
+    </ul>
+</div>
+<div class="container mx-auto my-6 text-center">
+    <div class="text-5xl font-extrabold ...">
+        <span class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%">
+          Hello world
+        </span>
+      </div>
+</div>
+<div class="container mx-auto my-6 space-x-8" >
+    <button class="outline outline-offset-2 outline-1 ring-offset-2 ring-4">Button A</button>
+    <button class="outline outline-offset-2 outline-2  ring-offset-2 ring">Button B</button>
+    <button class="outline ring-offset-2 ring-2 outline-offset-2 outline-4 ">Button C</button>
+
+
+    <button class="... ring-offset-2 ring-2">Button A</button>
+    <button class="... ring-offset-2 ring">Button B</button>
+    <button class="... ring-offset-2 ring-4">Button C</button>
+</div>
+<div class="container mx-auto my-6">
+    <div class="flex justify-center -space-x-5">
+        <div class="mix-blend-multiply bg-blue-400 h-16 w-16 rounded-full"></div>
+        <div class="mix-blend-multiply bg-pink-400 h-16 w-16 rounded-full"></div>
+      </div>
+</div>
+<div class="container mx-auto my-6 ">
+    <button class="transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 rounded p-3">
+        Save Changes
+    </button>
+    
+      <span class="relative flex h-3 w-3">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-3 w-3 bg-sky-500"></span>
+      </span>
+</div>
+
+<div class="container mx-auto my-6">    
+     
+</div>
+<div class="container mx-auto my-6">    
+   
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+<script src="assets/js/script.js"></script>
+</body>
+</html>

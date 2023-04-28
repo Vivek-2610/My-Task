@@ -1,0 +1,7 @@
+@config "./vivek.js";
+@tailwind base;
+@tailwind components;
+@layer btn{
+    @apply bg-purple-600 px-3 py-2 rounded-2xl text-white hover:text-slate-600 hover:bg-purple-300 mx-2 hover:border-2 hover:border-black;
+}
+@tailwind utilities;
