@@ -1,17 +1,22 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
 /*  Navbar Scroll Effect  */
-/* .navbar.is-hidden {
+.navbar.is-hidden {
   transform: translate(0, -85px);
   transition: transform 1s;
-}
-.navbar{
-    position: fixed;
 }
 .navbar.is-visible {
   transform: translate(0, 0);
   transition: transform 1s;
-} */
-
+  z-index: 99;
+}
+.overflow{
+    overflow-y: hidden;
+}
+.overflow #navbar nav {
+    overflow-y: scroll;
+    height: 100vh;
+    align-items: baseline;
+}
 
 .logo{
   height: 70px;
@@ -109,13 +114,8 @@
     }
     
 } */
-
-.dropdown>.dropdown-toggle:active {
-  /*Without this, clicking will make it sticky*/
-  /* pointer-events: none; */
-}
-.dropdown:hover .dropdown-toggle::after {
-    transform: rotate(180deg);
+.dropdown-toggle.show::after {
+    transform: rotate(-180deg);
 }
 .dropdown-toggle::after {
     transition: all .5s ease-in-out;
@@ -129,6 +129,7 @@
 }
 .dropdown:hover .dropdown-menu {
     opacity: 1;
+    transform: translateX(35px);
 }
 /* Burgur Menu */
 .burger {
@@ -151,16 +152,19 @@
 .burger span::before,
 .burger span::after {
     content: "";
-    width: 100%;
+    width: 75%;
     background-color: black;
     display: block;
     transition: all 0.5s ease-in-out;
     border-radius: 12px;
     height: 4px;
+    margin-left: auto;
+}
+.burger span::after {
+    width: 50%;
 }
 .burger span::before {
     transform: translateY(-10px);
-
 }
 .burger span::after {
     transform: translateY(10px);
@@ -174,6 +178,7 @@
 }
 .burger.active span::after {
     transform: rotateZ(-45deg) translateY(0);
+    width: 75%;
 }
 .navbar-toggler{
     border: none;
@@ -273,7 +278,7 @@
     position: absolute;
 	top: 0;
 	left: 0;
-	width: 100%;
+	width: 101%;
 	height: 100%;
 	background: #fff;
 	color: #2f4351;
@@ -331,7 +336,27 @@
 .dropdown a{
     padding: 0 14px; 
 }  
-
+/* Model */
+.model-btn {
+    top: 40%;
+    right: -100px;
+    transform: rotate(-90deg);
+    border-radius: 10px 10px 0 0;
+    transition: all 0.5s;
+}
+.model-btn:hover {
+    color: black;
+    background-color: white;
+    border-color: gray;
+}
+/* .modal-dialog {
+    width: 85vw;
+    height: 90vh;
+    max-width: unset;
+} */
+.card img{
+    height: 35vh;
+}
 /* ************************************************************************** RESPONSIVE START ***************************************************************************************** */
 @media (max-width:1399px){
 }
@@ -340,12 +365,14 @@
 @media (min-width:992px){
     .dropdown:hover>.dropdown-menu {
         display: block;
-      }
-      .dropdown:hover .dropdown-menu {
+    }
+    .dropdown:hover .dropdown-menu {
         opacity: 1;
         top: 50px;
         left: -50%;
-        transform: translateX(35px);
+    }
+    .dropdown:hover .dropdown-toggle::after {
+        transform: rotate(-180deg);
     }
     .dropdown>.dropdown-toggle:active {
         /*Without this, clicking will make it sticky*/
